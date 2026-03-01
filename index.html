@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Nguyen Mai Hanh Vy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #f8fafc;
+            --accent-color: #38bdf8;
+            --secondary-bg: #1e293b;
+            --slate-400: #94a3b8;
+        }
+
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+        body { margin: 0; font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+
+        /* Navigation */
+        nav { display: flex; justify-content: space-between; padding: 1.5rem 10%; position: fixed; width: 100%; top: 0; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); z-index: 1000; border-bottom: 1px solid #334155; }
+        .logo { font-weight: 800; font-size: 1.2rem; color: var(--accent-color); text-transform: uppercase; }
+        nav ul { display: flex; list-style: none; gap: 2rem; margin: 0; }
+        nav a { text-decoration: none; color: var(--text-color); font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
+        nav a:hover { color: var(--accent-color); }
+
+        section { padding: 120px 10% 80px; }
+        .section-title { font-size: 2.5rem; margin-bottom: 3rem; position: relative; display: inline-block; }
+        .section-title::after { content: ''; position: absolute; left: 0; bottom: -10px; width: 60px; height: 4px; background: var(--accent-color); }
+
+        /* Hero / About Section */
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); margin: 0; line-height: 1.1; color: var(--text-color); }
+        .intro-text { font-size: 1.25rem; line-height: 1.8; color: var(--slate-400); max-width: 750px; margin: 2rem 0; border-left: 3px solid var(--accent-color); padding-left: 25px; }
+        .intro-text strong { color: var(--accent-color); font-weight: 600; }
+
+        /* Skills Section */
+        .skills-container { margin-bottom: 3rem; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.2rem; margin-bottom: 2rem; }
+        .skill-item { background: var(--secondary-bg); padding: 1.2rem; border-radius: 12px; text-align: center; border: 1px solid #334155; transition: 0.4s; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 120px; }
+        .skill-item:hover { border-color: var(--accent-color); transform: translateY(-8px); box-shadow: 0 10px 30px -15px rgba(56, 189, 248, 0.3); }
+        .skill-item i { font-size: 2rem; color: var(--accent-color); margin-bottom: 0.8rem; display: block; }
+        .skill-item img { max-width: 40px; height: auto; margin-bottom: 0.8rem; display: block; }
+        h3.skill-category { color: var(--slate-400); font-size: 1.1rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Experience Section */
+        .timeline { border-left: 2px solid #334155; padding-left: 2.5rem; position: relative; max-width: 800px; }
+        .timeline-item { margin-bottom: 4rem; position: relative; }
+        .timeline-item::before { content: ''; position: absolute; left: -3.05rem; top: 5px; width: 14px; height: 14px; border-radius: 50%; background: var(--accent-color); border: 4px solid var(--bg-color); }
+        .time { font-size: 0.9rem; color: var(--accent-color); font-weight: 700; }
+
+        /* Buttons */
+        .btn { display: inline-block; background: var(--accent-color); color: #0f172a; padding: 1rem 2.2rem; border-radius: 50px; text-decoration: none; font-weight: 800; transition: 0.3s; box-shadow: 0 4px 14px rgba(56, 189, 248, 0.4); }
+        .btn-outline { background: transparent; border: 2px solid var(--accent-color); color: var(--accent-color); }
+        .btn:hover { transform: scale(1.05); opacity: 0.9; }
+
+        /* Contact Box */
+        .contact-box { background: linear-gradient(145deg, #1e293b, #0f172a); padding: 4rem; border-radius: 24px; text-align: center; border: 1px solid #334155; }
+        .social-links { margin-top: 2.5rem; display: flex; justify-content: center; gap: 2rem; font-size: 1.8rem; }
+        .social-links a { color: var(--slate-400); transition: 0.3s; }
+        .social-links a:hover { color: var(--accent-color); }
+
+        footer { text-align: center; padding: 4rem 0; color: var(--slate-400); border-top: 1px solid #334155; font-size: 0.8rem; }
+
+        @media (max-width: 768px) {
+            section { padding: 100px 5%; }
+            .hero h1 { font-size: 2.8rem; }
+            .skills-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Hanh Vy.</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about" class="hero">
+        <span style="color: var(--accent-color); font-weight: 600; letter-spacing: 3px; margin-bottom: 10px;">HELLO, I AM</span>
+        <h1>Nguyen Mai Hanh Vy.</h1>
+        <div class="intro-text">
+            A recent <strong>Marketing Communications</strong> graduate. 
+            I focus my energy on being a <strong>dedicated learner</strong> and a <strong>disciplined listener</strong>. 
+            I am committed to working hard and refining my skills every day to build a solid foundation for my professional future.
+        </div>
+        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+            <a href="#contact" class="btn">Connect with me</a>
+            <a href="CV_NguyenMaiHanhVy.pdf" class="btn btn-outline"><i class="fas fa-download"></i> Download CV</a>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">My Expertise & Tools</h2>
+        
+        <div class="skills-container">
+            <h3 class="skill-category">Marketing & Soft Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fas fa-search"></i>Research</div>
+                <div class="skill-item"><i class="fas fa-calendar-alt"></i>Content Planning</div>
+                <div class="skill-item"><i class="fas fa-lightbulb"></i>Content Ideation</div>
+                <div class="skill-item"><i class="fas fa-clock"></i>Time Management</div>
+                <div class="skill-item"><i class="fas fa-users"></i>Teamwork & Independent Work</div>
+                <div class="skill-item"><i class="fas fa-robot"></i>AI for Work</div>
+            </div>
+        </div>
+
+        <div class="skills-container">
+            <h3 class="skill-category">Software & Design Tools</h3>
+            <div class="skills-grid">
+                <div class="skill-item"><img src="image_2.png" alt="Word Logo">Word</div>
+                <div class="skill-item"><img src="image_3.png" alt="Excel Logo">Excel</div>
+                <div class="skill-item"><img src="image_4.png" alt="Power Point Logo">Power Point</div>
+                
+                <div class="skill-item"><img src="image_5.png" alt="Photoshop Logo">Photoshop</div>
+                <div class="skill-item"><img src="image_6.png" alt="Illustrator Logo">Illustrator</div>
+                <div class="skill-item"><img src="image_7.png" alt="Premiere Logo">Premiere</div>
+                
+                <div class="skill-item"><img src="image_8.png" alt="Canva Logo">Canva</div>
+                <div class="skill-item"><img src="image_9.png" alt="CapCut Logo">CapCut</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2 class="section-title">Education & Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="time">2020 - 2024</span>
+                <div class="timeline-content">
+                    <h3>Bachelor of Marketing Communications</h3>
+                    <p>Graduated with professional training in strategic communication and digital marketing.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="time">Present</span>
+                <div class="timeline-content">
+                    <h3>Personal Development</h3>
+                    <p>Refining creative skills and staying current with industry trends.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-box">
+            <h2 style="font-size: 2.5rem; margin-top: 0;">Let's work together!</h2>
+            <p style="color: var(--slate-400);">I'm ready for new challenges in the Marketing industry.</p>
+            <a href="mailto:your-email@gmail.com" class="btn">Send an Email</a>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p style="margin-top: 2rem; color: var(--accent-color); font-weight: 600;">your-email@gmail.com</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 NGUYEN MAI HANH VY. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+</body>
+</html>
