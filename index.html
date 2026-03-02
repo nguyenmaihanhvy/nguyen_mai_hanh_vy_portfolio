@@ -29,7 +29,21 @@
         .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin: 0; line-height: 1.1; color: var(--text-color); }
         .intro-text { font-size: 1.1rem; color: var(--slate-400); max-width: 650px; margin: 1.5rem 0; border-left: 3px solid var(--accent-color); padding-left: 20px; }
 
-        /* Experience & Education Layout */
+        /* Experience (Brittany Chiang "Built" Style) */
+        .project-grid { display: flex; flex-direction: column; gap: 100px; }
+        .project-item { display: grid; grid-template-columns: repeat(12, 1fr); align-items: center; }
+        .project-content { grid-column: 1 / 8; z-index: 2; }
+        .project-item:nth-child(even) .project-content { grid-column: 6 / -1; text-align: right; }
+        
+        .project-overline { color: var(--accent-color); font-family: monospace; font-size: 0.85rem; margin-bottom: 10px; display: block; }
+        .project-title { font-size: 1.75rem; color: var(--text-color); margin: 0 0 20px; }
+        .project-description { background: var(--secondary-bg); padding: 25px; border-radius: 4px; color: var(--slate-400); font-size: 1rem; box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7); }
+        
+        .project-tech-list { display: flex; flex-wrap: wrap; list-style: none; padding: 0; margin: 20px 0 10px; gap: 15px; }
+        .project-item:nth-child(even) .project-tech-list { justify-content: flex-end; }
+        .project-tech-list li { font-family: monospace; font-size: 0.8rem; color: var(--slate-400); }
+
+        /* Education Layout */
         .exp-item { margin-bottom: 3rem; }
         .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
         .exp-header h3 { margin: 0; font-size: 1.3rem; color: var(--text-color); }
@@ -38,7 +52,6 @@
         .exp-list { list-style: none; padding: 0; margin: 0; }
         .exp-list li { position: relative; padding-left: 25px; margin-bottom: 10px; color: var(--slate-400); font-size: 0.95rem; }
         .exp-list li::before { content: '▹'; position: absolute; left: 0; color: var(--accent-color); }
-        .achievement-box { background: rgba(56, 189, 248, 0.05); border: 1px dashed var(--accent-color); padding: 15px; border-radius: 8px; margin-top: 10px; font-size: 0.9rem; color: var(--text-color); }
 
         /* Skills Layout */
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.2rem; }
@@ -52,7 +65,13 @@
         .btn-filled { background: var(--accent-color); color: var(--bg-color); }
         .btn:hover { background: rgba(56, 189, 248, 0.1); }
 
-        @media (max-width: 992px) { section { padding: 80px 5%; } .hero { flex-direction: column; text-align: center; padding-top: 100px; } .exp-header { flex-direction: column; } }
+        @media (max-width: 992px) { 
+            section { padding: 80px 5%; } 
+            .hero { flex-direction: column; text-align: center; padding-top: 100px; }
+            .project-item { grid-template-columns: 1fr; }
+            .project-content, .project-item:nth-child(even) .project-content { grid-column: 1 / -1; text-align: left; }
+            .project-item:nth-child(even) .project-tech-list { justify-content: flex-start; }
+        }
     </style>
 </head>
 <body>
@@ -60,15 +79,15 @@
         <div class="logo">Hạnh Vy.</div>
         <ul>
             <li><a href="#about">Giới thiệu</a></li>
-            <li><a href="#experience">Kinh nghiệm</a></li>
             <li><a href="#education">Học vấn</a></li>
             <li><a href="#skills">Kỹ năng</a></li>
+            <li><a href="#experience">Kinh nghiệm</a></li>
         </ul>
     </nav>
 
     <section id="about" class="hero">
         <div class="hero-image">
-            <img src="avatar.JPG" alt="Avatar" onerror="this.src='https://ui-avatars.com/api/?name=Hanh+Vy&background=38bdf8&color=fff&size=300'">
+            <img src="avatar.png" alt="Avatar" onerror="this.src='https://ui-avatars.com/api/?name=Hanh+Vy&background=38bdf8&color=fff&size=300'">
         </div>
         <div class="hero-content">
             <span style="color: var(--accent-color); font-family: monospace;">Xin chào, tôi tên là</span>
@@ -84,75 +103,39 @@
     </section>
 
     <section id="experience">
-        <h2 class="section-title">Kinh nghiệm làm việc</h2>
-        
-        <div class="exp-item">
-            <div class="exp-header">
-                <h3>Project Management Executive <span>@ MCV Network</span></h3>
-                <span class="exp-date">9/2024 - Hiện tại</span>
-            </div>
-            <ul class="exp-list">
-                <li>Upload và bảo vệ bản quyền nội dung của đối tác trên nền tảng Facebook.</li>
-                <li>Release và hỗ trợ các vấn đề kỹ thuật liên quan đến bản quyền nhạc của đối tác.</li>
-                <li>Vận hành 2 kênh TikTok và 1 kênh Fanpage về tin tức âm nhạc.</li>
-                <li>Theo dõi và lập báo cáo tiến độ dự án cho leader và đối tác.</li>
-            </ul>
-            <div class="achievement-box"><strong>Thành tựu:</strong> (Dùng để ghi kết quả đạt được, ví dụ: KPI đạt 100%...)</div>
-        </div>
-
-        <div class="exp-item">
-            <div class="exp-header">
-                <h3>Thực tập sinh Design <span>@ HUMA AGENCY</span></h3>
-                <span class="exp-date">6/2024 - 9/2024</span>
-            </div>
-            <ul class="exp-list">
-                <li>Thiết kế ảnh các bài post social theo dự án được giao.</li>
-                <li>Thực hiện các công việc khác được giao: viết content post social, seeding, ...</li>
-            </ul>
-        </div>
-
-        <div class="exp-item">
-            <div class="exp-header">
-                <h3>Nhân viên Content Marketing (Part-time) <span>@ VDS (Giải Pháp Nền Tảng Số)</span></h3>
-                <span class="exp-date">1/2024 - 6/2024</span>
-            </div>
-            <ul class="exp-list">
-                <li>Định hướng content, lên kế hoạch quản lý nội dung và phát triển 2 kênh fanpage và 1 kênh Youtube.</li>
-                <li>Fanpage: Xây dựng nội dung và thiết kế ấn phẩm truyền thông.</li>
-                <li>Shorts Youtube: Lên ý tưởng và edit video.</li>
-                <li>Tìm kiếm và seeding các bài đăng vào các group liên quan tiềm năng.</li>
-                <li>Thiết kế poster, lên kịch bản và edit video (thời lượng 3-5 phút).</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="education">
         <h2 class="section-title">Học vấn</h2>
-        <div class="exp-item">
-            <div class="exp-header">
-                <h3>Chuyên ngành Truyền thông Marketing <span>@ Đại học Tài chính - Marketing</span></h3>
-                <span class="exp-date">2021 - 2025</span>
+        <div class="jobs-container">
+            <div class="tab-list">
+                <div class="tab-item active" onclick="showTab('edu')">Đào tạo</div>
+                <div class="tab-item" onclick="showTab('cert')">Chứng chỉ</div>
             </div>
-            <ul class="exp-list">
-                <li>Tốt nghiệp loại Giỏi chuyên ngành Truyền thông Marketing.</li>
-                <li>Đạt chứng chỉ chuyên môn quốc tế và tin học văn phòng nâng cao.</li>
-            </ul>
-            <div style="margin-top: 1.5rem;">
-                <h4 style="color: var(--slate-400); margin-bottom: 10px;">Chứng chỉ chuyên môn</h4>
-                <ul class="exp-list">
-                    <li>800 TOEIC | 2024</li>
-                    <li>MOS Excel 2016 | 2024</li>
-                    <li>MOS Word 2016 | 2022</li>
-                    <li>The Fundamentals of Digital Marketing | 2021</li>
-                    <li>Digital Body Language | 2021</li>
-                </ul>
-                <a href="https://drive.google.com/drive/folders/1--cnJpvD1aERClkD5jV259e1Td-h_BZb" target="_blank" class="btn" style="margin-top: 15px;">Tham chiếu chứng chỉ</a>
+            <div class="job-content">
+                <div id="edu-content">
+                    <h3>Truyền thông Marketing <span class="company">@ Đại học Tài chính - Marketing</span></h3>
+                    <p class="date">2020 - 2024</p>
+                    <ul>
+                        <li>Tốt nghiệp loại Giỏi chuyên ngành Marketing Communications.</li>
+                        <li>Nắm vững kiến thức về nghiên cứu thị trường, lập kế hoạch nội dung và chiến lược truyền thông.</li>
+                    </ul>
+                </div>
+                <div id="cert-content" style="display: none;">
+                    <h3>Chứng chỉ chuyên môn</h3>
+                    <p class="date">2021 - 2024</p>
+                    <ul>
+                        <li>800 TOEIC | 2024</li>
+                        <li>MOS Excel 2016 | 2024</li>
+                        <li>MOS Word 2016 | 2022</li>
+                        <li>The Fundamentals of Digital Marketing | 2021</li>
+                        <li>Digital Body Language | 2021</li>
+                    </ul>
+                    <a href="https://drive.google.com/drive/folders/1--cnJpvD1aERClkD5jV259e1Td-h_BZb" target="_blank" class="btn" style="margin-top: 10px;">Xem kho chứng chỉ →</a>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="skills">
-        <h2 class="section-title">Kỹ năng</h2>
+        <h2 class="section-title">Kỹ năng & Công cụ</h2>
         <h3 class="category">Kỹ năng</h3>
         <div class="skills-grid" style="margin-bottom: 3rem;">
             <div class="skill-item"><i class="fas fa-search"></i>Nghiên cứu</div>
@@ -164,28 +147,77 @@
         </div>
         <h3 class="category">Công cụ</h3>
         <div class="skills-grid">
-            <div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Microsoft_Office_Word_%282019%E2%80%93present%29.svg" alt="Word">Word</div>
-            <div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg" alt="Excel">Excel</div>
-            <div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Microsoft_Office_PowerPoint_%282019%E2%80%93present%29.svg" alt="PP">Power Point</div>
+            <div class="skill-item"><img src="image_2.png" alt="Word Logo">Word</div>
+            <div class="skill-item"><img src="image_3.png" alt="Excel Logo">Excel</div>
+            <div class="skill-item"><img src="image_4.png" alt="Power Point Logo">Power Point</div>
             <div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg" alt="PS">Photoshop</div>
             <div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg" alt="AI">Illustrator</div>
             <div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg" alt="PR">Premiere Pro</div>
-            <div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg" alt="Canva">Canva</div>
-            <div class="skill-item"><img src="https://static.cdnlogo.com/logos/c/74/capcut.svg" alt="CapCut">CapCut</div>
+            <div class="skill-item"><img src="image_8.png" alt="Canva Logo">Canva</div>
+            <div class="skill-item"><img src="image_9.png" alt="CapCut Logo">CapCut</div>
         </div>
     </section>
 
-    <section id="contact" style="text-align: center; max-width: 600px; margin: 4rem auto;">
+    <section id="experience">
+        <h2 class="section-title">Kinh nghiệm làm việc</h2>
+        
+        <div class="project-grid">
+            <div class="project-item">
+                <div class="project-content">
+                    <span class="project-overline">9/2024 - Hiện tại</span>
+                    <h3 class="project-title">Project Management Executive @ MCV Network</h3>
+                    <div class="project-description">
+                        Upload và bảo vệ bản quyền nội dung của đối tác trên Facebook. Release và hỗ trợ kỹ thuật liên quan đến bản quyền nhạc. Vận hành các kênh TikTok và Fanpage tin tức âm nhạc, đồng thời lập báo cáo tiến độ dự án.
+                    </div>
+                    <ul class="project-tech-list">
+                        <li>Facebook Rights Manager</li>
+                        <li>TikTok Management</li>
+                        <li>Project Tracking</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-content">
+                    <span class="project-overline">6/2024 - 9/2024</span>
+                    <h3 class="project-title">Thực tập sinh Design @ HUMA AGENCY</h3>
+                    <div class="project-description">
+                        Thiết kế ấn phẩm hình ảnh cho các bài đăng Social Media theo dự án. Hỗ trợ xây dựng nội dung bài viết và thực hiện các chiến dịch seeding cộng đồng.
+                    </div>
+                    <ul class="project-tech-list">
+                        <li>Graphic Design</li>
+                        <li>Social Media</li>
+                        <li>Content Writing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-content">
+                    <span class="project-overline">1/2024 - 6/2024</span>
+                    <h3 class="project-title">Content Marketing (Part-time) @ VDS</h3>
+                    <div class="project-description">
+                        Định hướng và quản lý nội dung cho Fanpage và Youtube. Xây dựng kịch bản, edit video Shorts và thiết kế poster truyền thông. Thực hiện seeding để tăng độ nhận diện thương hiệu trong các nhóm mục tiêu.
+                    </div>
+                    <ul class="project-tech-list">
+                        <li>Video Editing</li>
+                        <li>Youtube Marketing</li>
+                        <li>Fanpage Management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" style="text-align: center; padding: 4rem; border-top: 1px solid #334155;">
         <h2 class="section-title" style="justify-content: center;">Liên hệ</h2>
-        <div style="margin: 2rem 0; color: var(--slate-400); line-height: 2;">
-            <p><i class="fas fa-phone" style="color: var(--accent-color); margin-right: 10px;"></i> 0986952436</p>
-            <p><i class="fas fa-envelope" style="color: var(--accent-color); margin-right: 10px;"></i> nmhv29@gmail.com</p>
-            <p><i class="fab fa-facebook" style="color: var(--accent-color); margin-right: 10px;"></i> <a href="https://www.facebook.com/concuatrenbo" target="_blank" style="color: inherit; text-decoration: none;">Nguyễn Mai Hạnh Vy</a></p>
+        <div style="color: var(--slate-400); margin-bottom: 20px;">
+            <p>SĐT: 0986952436 | Email: nmhv29@gmail.com</p>
+            <p>Facebook: <a href="https://www.facebook.com/concuatrenbo" target="_blank" style="color: var(--accent-color); text-decoration: none;">Nguyễn Mai Hạnh Vy</a></p>
         </div>
-    </section>
-
-    <footer style="text-align: center; padding: 3rem; color: var(--slate-400); font-size: 0.8rem;">
-        <p>© 2026 NGUYỄN MAI HẠNH VY. ALL RIGHTS RESERVED.</p>
+        <p style="font-size: 0.8rem; color: var(--slate-400);">© 2026 NGUYỄN MAI HẠNH VY. ALL RIGHTS RESERVED.</p>
     </footer>
 </body>
 </html>
+
+
