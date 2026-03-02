@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Nguyen Mai Hanh Vy</title>
+    <title>Portfolio | Nguyễn Mai Hạnh Vy</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -24,18 +24,11 @@
         /* Hero Section */
         .hero { min-height: 100vh; display: flex; align-items: center; gap: 4rem; }
         .hero-image { width: 300px; height: 300px; border-radius: 50%; border: 4px solid var(--accent-color); overflow: hidden; flex-shrink: 0; box-shadow: 0 0 30px rgba(56, 189, 248, 0.2); background: var(--secondary-bg); }
-        
-        /* CẬP NHẬT: Giúp ảnh phủ kín khung tròn */
-        .hero-image img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            object-position: center; 
-        }
+        .hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
 
         .hero-content { flex: 1; }
         .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin: 0; line-height: 1.1; color: var(--text-color); }
-        .intro-text { font-size: 1.1rem; color: var(--slate-400); max-width: 600px; margin: 1.5rem 0; border-left: 3px solid var(--accent-color); padding-left: 20px; }
+        .intro-text { font-size: 1.1rem; color: var(--slate-400); max-width: 650px; margin: 1.5rem 0; border-left: 3px solid var(--accent-color); padding-left: 20px; }
 
         /* Experience Tabs */
         .jobs-container { display: flex; gap: 30px; margin-top: 2rem; }
@@ -75,12 +68,12 @@
 </head>
 <body>
     <nav>
-        <div class="logo">Hanh Vy.</div>
+        <div class="logo">Hạnh Vy.</div>
         <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">Giới thiệu</a></li>
+            <li><a href="#experience">Học vấn</a></li>
+            <li><a href="#skills">Kỹ năng</a></li>
+            <li><a href="#contact">Liên hệ</a></li>
         </ul>
     </nav>
 
@@ -89,53 +82,53 @@
             <img src="avatar.png" alt="Avatar" onerror="this.src='https://ui-avatars.com/api/?name=Hanh+Vy&background=38bdf8&color=fff&size=300'">
         </div>
         <div class="hero-content">
-            <span style="color: var(--accent-color); font-family: monospace;">Hi, my name is</span>
-            <h1 style="margin-top: 10px;">Nguyen Mai Hanh Vy.</h1>
+            <span style="color: var(--accent-color); font-family: monospace;">Xin chào, tôi tên là</span>
+            <h1 style="margin-top: 10px;">Nguyễn Mai Hạnh Vy.</h1>
             <div class="intro-text">
-                A recent <strong>Marketing Communications</strong> graduate. I focus my energy on being a <strong>dedicated learner</strong> and a <strong>disciplined listener</strong>. I am committed to working hard and refining my skills every day.
+                Tôi là một sinh viên chuyên ngành <strong>Truyền thông Marketing</strong> vừa tốt nghiệp. Bản thân tôi dành nhiều năng lượng và thời gian cho việc tìm tòi và khám phá bản thân. Tôi yêu thích việc lắng nghe và học hỏi để bồi dưỡng một nền tảng kiến thức vững chắc cho hành trình sự nghiệp tương lai.
             </div>
             <div class="btn-group">
-                <a href="mailto:nmhv29@gmail.com" class="btn btn-filled">Connect with me</a>
-                <a href="CV_NguyenMaiHanhVy.pdf" class="btn" download>Download CV</a>
+                <a href="mailto:nmhv29@gmail.com" class="btn btn-filled">Kết nối với tôi</a>
+                <a href="CV_NguyenMaiHanhVy.pdf" class="btn" download>Tải CV</a>
             </div>
         </div>
     </section>
 
     <section id="experience">
-        <h2 class="section-title">01. Where I’ve Studied</h2>
+        <h2 class="section-title">Học vấn</h2>
         <div class="jobs-container">
             <div class="tab-list">
-                <div class="tab-item active" onclick="showTab('edu')">Education</div>
-                <div class="tab-item" onclick="showTab('cert')">Certifications</div>
+                <div class="tab-item active" onclick="showTab('edu')">Đào tạo</div>
+                <div class="tab-item" onclick="showTab('cert')">Chứng chỉ</div>
             </div>
             <div class="job-content">
                 <div id="edu-content">
-                    <h3>Marketing Communications <span class="company">@ University of Finance - Marketing</span></h3>
+                    <h3>Truyền thông Marketing <span class="company">@ Đại học Tài chính - Marketing</span></h3>
                     <p class="date">2020 - 2024</p>
                     <ul>
-                        <li>Graduated with Honors (Good/Distinction grade).</li>
-                        <li>Focus on Strategic Communication and Digital Marketing.</li>
+                        <li>Tốt nghiệp loại Giỏi chuyên ngành Marketing Communications.</li>
+                        <li>Nắm vững kiến thức về nghiên cứu thị trường, lập kế hoạch nội dung và chiến lược truyền thông.</li>
                     </ul>
                 </div>
                 <div id="cert-content" style="display: none;">
-                    <h3>Professional Certifications</h3>
+                    <h3>Chứng chỉ chuyên môn</h3>
                     <p class="date">2021 - 2024</p>
                     <ul>
                         <li>800 TOEIC | 2024</li>
                         <li>MOS Excel 2016 | 2024</li>
                         <li>MOS Word 2016 | 2022</li>
-                        <li>Fundamentals of Digital Marketing | 2021</li>
+                        <li>The Fundamentals of Digital Marketing | 2021</li>
                         <li>Digital Body Language | 2021</li>
                     </ul>
-                    <a href="https://drive.google.com/drive/folders/1--cnJpvD1aERClkD5jV259e1Td-h_BZb" target="_blank" class="btn" style="margin-top: 10px;">View Folder →</a>
+                    <a href="https://drive.google.com/drive/folders/1--cnJpvD1aERClkD5jV259e1Td-h_BZb" target="_blank" class="btn" style="margin-top: 10px;">Xem kho chứng chỉ →</a>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="skills">
-        <h2 class="section-title">02. My Skills & Tools</h2>
-        <h3 class="category">Marketing & Soft Skills</h3>
+        <h2 class="section-title">Kỹ năng & Công cụ</h2>
+        <h3 class="category">Marketing & Kỹ năng mềm</h3>
         <div class="skills-grid" style="margin-bottom: 3rem;">
             <div class="skill-item"><i class="fas fa-search"></i>Research</div>
             <div class="skill-item"><i class="fas fa-calendar-alt"></i>Content Planning</div>
@@ -144,7 +137,7 @@
             <div class="skill-item"><i class="fas fa-users"></i>Teamwork</div>
             <div class="skill-item"><i class="fas fa-robot"></i>AI for Work</div>
         </div>
-        <h3 class="category">Software & Design Tools</h3>
+        <h3 class="category">Phần mềm & Thiết kế</h3>
         <div class="skills-grid">
             <div class="skill-item"><img src="image_2.png" alt="Word Logo">Word</div>
             <div class="skill-item"><img src="image_3.png" alt="Excel Logo">Excel</div>
@@ -158,14 +151,18 @@
     </section>
 
     <section id="contact" style="text-align: center; max-width: 600px; margin: 4rem auto;">
-        <h2 class="section-title" style="justify-content: center;">03. Get In Touch</h2>
+        <h2 class="section-title" style="justify-content: center;">Liên hệ</h2>
         <div style="margin: 2rem 0; color: var(--slate-400); line-height: 2;">
-            <p><i class="fas fa-phone" style="color: var(--accent-color); margin-right: 10px;"></i> (+84) 986 952 436</p>
+            <p><i class="fas fa-phone" style="color: var(--accent-color); margin-right: 10px;"></i> 0986952436</p>
             <p><i class="fas fa-envelope" style="color: var(--accent-color); margin-right: 10px;"></i> nmhv29@gmail.com</p>
-            <p><i class="fab fa-facebook" style="color: var(--accent-color); margin-right: 10px;"></i> <a href="https://www.facebook.com/concuatrenbo" target="_blank" style="color: inherit; text-decoration: none;">Nguyen Mai Hanh Vy</a></p>
+            <p><i class="fab fa-facebook" style="color: var(--accent-color); margin-right: 10px;"></i> <a href="https://www.facebook.com/concuatrenbo" target="_blank" style="color: inherit; text-decoration: none;">Nguyễn Mai Hạnh Vy</a></p>
         </div>
-        <a href="mailto:nmhv29@gmail.com" class="btn btn-filled" style="padding: 1.25rem 2.5rem;">Say Hello</a>
+        <a href="mailto:nmhv29@gmail.com" class="btn btn-filled" style="padding: 1.25rem 2.5rem;">Gửi Email</a>
     </section>
+
+    <footer style="text-align: center; padding: 3rem; color: var(--slate-400); font-size: 0.8rem;">
+        <p>© 2026 NGUYỄN MAI HẠNH VY. ALL RIGHTS RESERVED.</p>
+    </footer>
 
     <script>
         function showTab(type) {
