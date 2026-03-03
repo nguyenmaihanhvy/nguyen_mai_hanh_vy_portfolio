@@ -202,19 +202,19 @@
         </div>
     </section>
 
-    <section id="experience" style="background: #f8fafc; padding: 100px 15%;">
-    <h2 style="font-size: 3rem; color: #374151; margin-bottom: 50px; font-weight: 800; border-bottom: 3px solid #3b82f6; display: inline-block;">Experience</h2>
+    <section id="experience" style="padding: 100px 15%;">
+    <h2 class="section-title">Kinh nghiệm</h2>
     
-    <div class="ryan-timeline">
+    <div class="ryan-timeline-dark">
         <div class="timeline-block">
             <div class="timeline-dot"></div>
-            <div class="timeline-card">
+            <div class="timeline-card-dark">
                 <div class="card-header">
                     <div class="header-main">
                         <h3 class="job-title">Project Management Executive</h3>
                         <h4 class="company-name">MCV Network</h4>
                     </div>
-                    <span class="job-date">Sep 2024 – Present</span>
+                    <span class="job-date">Tháng 9/2024 – Hiện tại</span>
                 </div>
                 <ul class="job-desc-list">
                     <li>Upload và bảo vệ bản quyền nội dung của đối tác trên Facebook.</li>
@@ -226,13 +226,13 @@
 
         <div class="timeline-block">
             <div class="timeline-dot"></div>
-            <div class="timeline-card">
+            <div class="timeline-card-dark">
                 <div class="card-header">
                     <div class="header-main">
-                        <h3 class="job-title">Design Intern</h3>
+                        <h3 class="job-title">Thực tập sinh Design</h3>
                         <h4 class="company-name">HUMA AGENCY</h4>
                     </div>
-                    <span class="job-date">Jun 2024 – Sep 2024</span>
+                    <span class="job-date">Tháng 6/2024 – Tháng 9/2024</span>
                 </div>
                 <ul class="job-desc-list">
                     <li>Thiết kế ấn phẩm hình ảnh cho các bài đăng Social Media theo dự án.</li>
@@ -243,13 +243,13 @@
 
         <div class="timeline-block" style="margin-bottom: 0;">
             <div class="timeline-dot"></div>
-            <div class="timeline-card">
+            <div class="timeline-card-dark">
                 <div class="card-header">
                     <div class="header-main">
-                        <h3 class="job-title">Content Marketing (Part-time)</h3>
-                        <h4 class="company-name">Digital Platform Solutions (VDS)</h4>
+                        <h3 class="job-title">Nhân viên Content Marketing (Part-time)</h3>
+                        <h4 class="company-name">Công Ty Cổ Phần Giải Pháp Nền Tảng Số (VDS)</h4>
                     </div>
-                    <span class="job-date">Jan 2024 – Jun 2024</span>
+                    <span class="job-date">Tháng 1/2024 – Tháng 6/2024</span>
                 </div>
                 <ul class="job-desc-list">
                     <li>Định hướng và quản lý nội dung cho Fanpage và Youtube.</li>
@@ -262,48 +262,54 @@
 </section>
 
 <style>
-    /* Tổng thể Timeline */
-    .ryan-timeline {
+    /* Timeline Container */
+    .ryan-timeline-dark {
         position: relative;
-        padding-left: 50px; /* Tạo khoảng trống cho đường line bên trái */
+        padding-left: 50px;
     }
 
-    /* Đường kẻ dọc màu xám nhạt */
-    .ryan-timeline::before {
+    /* Trục dọc màu Slate 700 (giống viền các card công cụ) */
+    .ryan-timeline-dark::before {
         content: '';
         position: absolute;
-        left: 6px; /* Căn giữa với nút dot */
+        left: 6px;
         top: 0;
         height: 100%;
         width: 2px;
-        background: #e5e7eb;
+        background: #334155;
     }
 
     .timeline-block {
         position: relative;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
     }
 
-    /* Nút thắt màu xanh trên đường line */
+    /* Nút chấm tròn màu xanh Accent */
     .timeline-dot {
         position: absolute;
         left: -50px;
-        top: 0;
+        top: 5px;
         width: 14px;
         height: 14px;
-        background: #3b82f6;
+        background: var(--accent-color);
         border-radius: 50%;
         z-index: 2;
+        box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
     }
 
-    /* Card nội dung nền trắng */
-    .timeline-card {
-        background: #ffffff;
-        border: 1px solid #e5e7eb;
-        border-radius: 4px;
+    /* Card định dạng giống mục Công cụ (Nền tối, viền Slate) */
+    .timeline-card-dark {
+        background: var(--secondary-bg);
+        border: 1px solid #334155;
+        border-radius: 12px;
         padding: 25px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        transition: 0.4s;
         text-align: left;
+    }
+
+    .timeline-card-dark:hover {
+        border-color: var(--accent-color);
+        transform: translateY(-5px);
     }
 
     .card-header {
@@ -314,26 +320,26 @@
     }
 
     .job-title {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
         font-weight: 700;
-        color: #1f2937;
+        color: var(--text-color);
         margin: 0;
     }
 
     .company-name {
-        font-size: 1rem;
-        color: #3b82f6;
+        font-size: 0.95rem;
+        color: var(--accent-color);
         margin: 5px 0 0;
         font-weight: 500;
     }
 
     .job-date {
         font-size: 0.85rem;
-        color: #6b7280;
-        font-weight: 400;
+        color: var(--slate-400);
+        font-family: monospace;
     }
 
-    /* Danh sách mô tả công việc (Dấu chấm tròn xám nhạt) */
+    /* List mô tả */
     .job-desc-list {
         list-style: none;
         padding: 0;
@@ -344,22 +350,18 @@
         position: relative;
         padding-left: 20px;
         margin-bottom: 10px;
-        color: #4b5563;
+        color: var(--slate-400);
         font-size: 0.95rem;
-        line-height: 1.5;
     }
 
     .job-desc-list li::before {
-        content: '•';
+        content: '▹';
         position: absolute;
         left: 0;
-        color: #d1d5db;
-        font-size: 1.2rem;
+        color: var(--accent-color);
     }
 
-    /* Responsive cho mobile */
     @media (max-width: 768px) {
-        #experience { padding: 80px 5%; }
         .card-header { flex-direction: column; }
         .job-date { margin-top: 10px; }
     }
