@@ -205,172 +205,35 @@
     <section id="experience">
         <h2 class="section-title">Kinh nghiệm làm việc</h2>
         
-        <div class="project-item featured-project">
+        <div class="project-item">
     <div class="project-content">
         <span class="project-overline">9/2024 - Hiện tại</span>
         <h3 class="project-title">Project Management Executive @ MCV Network</h3>
         
-        <div class="featured-container">
-            <div class="description-column">
-                <ul class="experience-list">
-                    <li class="experience-row" data-target="mcv-fb">
-                        <span class="arrow-icon">▹</span>
-                        Upload và bảo vệ bản quyền nội dung của đối tác trên Facebook.
-                    </li>
-                    <li class="experience-row" data-target="mcv-music">
-                        <span class="arrow-icon">▹</span>
-                        Release và hỗ trợ kỹ thuật liên quan đến bản quyền nhạc.
-                    </li>
-                    <li class="experience-row" data-target="mcv-channels">
-                        <span class="arrow-icon">▹</span>
-                        Vận hành các kênh TikTok và Fanpage tin tức âm nhạc.
-                    </li>
-                </ul>
-                
-                <ul class="project-tech-list" style="margin-top: 30px; justify-content: flex-start;">
-                    <li>Facebook Rights Manager</li>
-                    <li>TikTok Management</li>
-                    <li>Project Tracking</li>
-                </ul>
-            </div>
-
-            <div class="image-display-column">
-                <div class="evidence-preview" id="mcv-fb">
-                    <img src="fb_proof_1.jpg" class="featured-img">
-                    <img src="fb_proof_2.jpg" class="featured-img">
-                </div>
-                <div class="evidence-preview" id="mcv-music">
-                    <img src="music_1.jpg" class="featured-img">
-                    <img src="music_2.jpg" class="featured-img">
-                    <img src="music_3.jpg" class="featured-img">
-                    <img src="music_4.jpg" class="featured-img">
-                </div>
-                <div class="evidence-preview" id="mcv-channels">
-                    <div class="channel-logos">
-                        <img src="wt_logo.jpg" class="featured-img">
-                        <img src="bg_logo.jpg" class="featured-img">
-                    </div>
-                    <div class="evidence-links">
-                        <a href="LINK_FB" target="_blank" class="btn-mini">Fanpage</a>
-                        <a href="LINK_TT" target="_blank" class="btn-mini">TikTok</a>
-                    </div>
-                </div>
-            </div>
+        <div class="project-description">
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="position: relative; padding-left: 20px; margin-bottom: 10px; color: var(--slate-400);">
+                    <span style="position: absolute; left: 0; color: var(--accent-color);">▹</span>
+                    Upload và bảo vệ bản quyền nội dung của đối tác trên Facebook.
+                </li>
+                <li style="position: relative; padding-left: 20px; margin-bottom: 10px; color: var(--slate-400);">
+                    <span style="position: absolute; left: 0; color: var(--accent-color);">▹</span>
+                    Release và hỗ trợ kỹ thuật liên quan đến bản quyền nhạc.
+                </li>
+                <li style="position: relative; padding-left: 20px; color: var(--slate-400);">
+                    <span style="position: absolute; left: 0; color: var(--accent-color);">▹</span>
+                    Vận hành các kênh TikTok và Fanpage tin tức âm nhạc, đồng thời lập báo cáo tiến độ dự án.
+                </li>
+            </ul>
         </div>
+
+        <ul class="project-tech-list" style="display: flex; flex-wrap: wrap; list-style: none; padding: 0; margin: 20px 0 0; gap: 15px;">
+            <li style="font-family: monospace; font-size: 0.8rem; color: var(--slate-400);">Facebook Rights Manager</li>
+            <li style="font-family: monospace; font-size: 0.8rem; color: var(--slate-400);">TikTok Management</li>
+            <li style="font-family: monospace; font-size: 0.8rem; color: var(--slate-400);">Project Tracking</li>
+        </ul>
     </div>
 </div>
-
-<style>
-    /* Bố cục chia đôi rõ rệt */
-    .featured-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 50px;
-        margin-top: 25px;
-    }
-
-    .description-column {
-        flex: 1; /* Cột chữ bên trái */
-        max-width: 500px;
-        z-index: 5;
-    }
-
-    .image-display-column {
-        flex: 1; /* Vùng ảnh bên phải (Vùng đỏ) */
-        position: relative;
-        min-height: 350px;
-        background: rgba(56, 189, 248, 0.03); /* Tạo vùng nền mờ nhẹ để nhận diện */
-        border-radius: 8px;
-        border: 1px dashed rgba(56, 189, 248, 0.2);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    /* Từng dòng kinh nghiệm */
-    .experience-row {
-        position: relative;
-        padding: 15px 25px;
-        background: var(--secondary-bg);
-        margin-bottom: 10px;
-        border-radius: 4px;
-        cursor: pointer;
-        color: var(--slate-400);
-        transition: 0.3s;
-        box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
-    }
-
-    .experience-row:hover {
-        color: var(--accent-color);
-        transform: translateX(10px);
-    }
-
-    /* Ẩn hiện ảnh dẫn chứng */
-    .evidence-preview {
-        position: absolute;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-        justify-content: center;
-        opacity: 0;
-        visibility: hidden;
-        transform: scale(0.95) translateX(30px);
-        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-
-    /* Hiệu ứng khi Hover dòng tương ứng */
-    .experience-row:hover ~ .image-display-column .evidence-preview, /* CSS lân cận không hỗ trợ tốt bằng JS nhỏ dưới đây */
-    .experience-row.active-hover .evidence-preview {
-        opacity: 1;
-        visibility: visible;
-        transform: scale(1) translateX(0);
-    }
-
-    .featured-img {
-        width: 160px;
-        height: 110px;
-        object-fit: cover;
-        border-radius: 4px;
-        border: 2px solid var(--accent-color);
-        box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.5);
-    }
-
-    .btn-mini {
-        font-size: 0.75rem;
-        color: var(--accent-color);
-        border: 1px solid var(--accent-color);
-        padding: 5px 15px;
-        border-radius: 4px;
-        text-decoration: none;
-        margin-top: 15px;
-        display: inline-block;
-    }
-
-    /* Responsive */
-    @media (max-width: 992px) {
-        .featured-container { flex-direction: column; }
-        .image-display-column { width: 100%; min-height: 250px; }
-    }
-</style>
-
-<script>
-    // Script nhỏ để kích hoạt hiển thị ảnh khi di chuột vào dòng tương ứng
-    document.querySelectorAll('.experience-row').forEach(row => {
-        row.addEventListener('mouseenter', () => {
-            const targetId = row.getAttribute('data-target');
-            document.querySelectorAll('.evidence-preview').forEach(p => {
-                p.style.opacity = '0';
-                p.style.visibility = 'hidden';
-            });
-            const target = document.getElementById(targetId);
-            if(target) {
-                target.style.opacity = '1';
-                target.style.visibility = 'visible';
-            }
-        });
-    });
-</script>
 
             <div class="project-item">
                 <div class="project-content">
