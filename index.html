@@ -538,3 +538,115 @@
         }
     }
 </script>
+<style>
+    /* Tối ưu UI cho Kỹ năng & Công cụ */
+    .category { 
+        color: var(--slate-400); 
+        font-size: 0.85rem; 
+        text-transform: uppercase; 
+        letter-spacing: 2px; 
+        margin: 3rem 0 1.5rem; 
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+    }
+    
+    .category::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: #e2e8f0;
+        margin-left: 15px;
+    }
+
+    .skills-grid { 
+        display: grid; 
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
+        gap: 1.5rem; 
+    }
+
+    .skill-item { 
+        background: #ffffff; 
+        padding: 2rem 1.5rem; 
+        border-radius: 20px; 
+        text-align: center; 
+        border: 1px solid rgba(0, 0, 0, 0.05); 
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+        height: auto; 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: var(--text-color);
+    }
+
+    .skill-item:hover { 
+        border-color: var(--accent-color); 
+        transform: translateY(-10px); 
+        box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.1), 0 10px 10px -5px rgba(79, 70, 229, 0.04);
+        background: #fff;
+    }
+
+    .skill-item i { 
+        font-size: 2.5rem; 
+        color: var(--accent-color); 
+        margin-bottom: 15px; 
+        transition: transform 0.3s ease;
+    }
+
+    .skill-item:hover i {
+        transform: scale(1.1);
+    }
+
+    .skill-item img { 
+        width: 50px; 
+        height: 50px; 
+        object-fit: contain; 
+        margin-bottom: 15px; 
+        filter: grayscale(20%);
+        transition: filter 0.3s ease;
+    }
+
+    .skill-item:hover img {
+        filter: grayscale(0%);
+    }
+
+    @media (max-width: 480px) {
+        .skills-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        .skill-item {
+            padding: 1.5rem 1rem;
+        }
+    }
+</style>
+
+<section id="skills">
+    <h2 class="section-title">Kỹ năng & Công cụ</h2>
+    
+    <h3 class="category">Kỹ năng</h3>
+    <div class="skills-grid" style="margin-bottom: 3rem;">
+        <div class="skill-item"><i class="fas fa-search"></i>Nghiên cứu</div>
+        <div class="skill-item"><i class="fas fa-calendar-alt"></i>Lên kế hoạch nội dung</div>
+        <div class="skill-item"><i class="fas fa-lightbulb"></i>Lên ý tưởng nội dung</div>
+        <div class="skill-item"><i class="fas fa-clock"></i>Quản lý thời gian</div>
+        <div class="skill-item"><i class="fas fa-users"></i>Làm việc nhóm & Độc lập</div>
+        <div class="skill-item"><i class="fas fa-robot"></i>Sử dụng AI hỗ trợ công việc</div>
+    </div>
+
+    <h3 class="category">Công cụ</h3>
+    <div class="skills-grid">
+        <div class="skill-item"><img src="image_2.png" alt="Word Logo">Word</div>
+        <div class="skill-item"><img src="image_3.png" alt="Excel Logo">Excel</div>
+        <div class="skill-item"><img src="image_4.png" alt="Power Point Logo">Power Point</div>
+        <div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg" alt="PS">Photoshop</div>
+        <div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg" alt="AI">Illustrator</div>
+        <div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg" alt="PR">Premiere Pro</div>
+        <div class="skill-item"><img src="image_8.png" alt="Canva Logo">Canva</div>
+        <div class="skill-item"><img src="image_9.png" alt="CapCut Logo">CapCut</div>
+    </div>
+</section>
