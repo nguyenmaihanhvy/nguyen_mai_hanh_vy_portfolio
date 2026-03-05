@@ -1324,6 +1324,75 @@
     }
 </style>
 
+<style>
+    .reveal-card-glow-super {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        background: #fff;
+        padding: 5px;
+        transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        z-index: 1;
+    }
+
+    /* Dải màu Nóng (Đỏ - Cam - Vàng) */
+    .reveal-card-glow-super::before, 
+    .reveal-card-glow-super::after {
+        content: '';
+        position: absolute;
+        background: conic-gradient(
+            transparent, 
+            #ff0000, /* Đỏ */
+            #ff8c00, /* Cam */
+            #ffd700, /* Vàng */
+            transparent
+        );
+        animation: rotateGlowSuper 3s linear infinite;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .reveal-card-glow-super::before {
+        width: 200%; height: 200%;
+        top: -50%; left: -50%;
+        z-index: -2;
+    }
+
+    .reveal-card-glow-super::after {
+        inset: -15px;
+        filter: blur(20px); /* Hào quang tỏa mạnh hơn */
+        z-index: -1;
+    }
+
+    .reveal-card-glow-super:hover::before,
+    .reveal-card-glow-super:hover::after {
+        opacity: 1;
+        animation: rotateGlowSuper 2s linear infinite, pulseWarmGlow 1.2s ease-in-out infinite alternate;
+    }
+
+    .reveal-card-glow-super .img-content-block {
+        position: relative;
+        background: white;
+        border-radius: 11px;
+        z-index: 0;
+        overflow: hidden;
+        width: 100%; height: 100%;
+    }
+
+    .reveal-card-glow-super img {
+        display: block; width: 100%; height: 100%; object-fit: cover; transition: 0.6s ease;
+    }
+
+    .reveal-card-glow-super:hover { transform: translateY(-12px) scale(1.02); }
+
+    @keyframes rotateGlowSuper { 100% { transform: rotate(360deg); } }
+    
+    @keyframes pulseWarmGlow {
+        0% { filter: blur(20px) brightness(1); }
+        100% { filter: blur(30px) brightness(1.5); }
+    }
+</style>
+
 <div class="performance-block" style="margin-top: 50px; border-top: 1px dashed #e2e8f0; padding-top: 40px;">
     <h3 class="company-label">MCV Network</h3>
     <div class="perf-card-large">
@@ -1337,10 +1406,11 @@
             </a>
         </div>
 
-        <div class="perf-images-large" style="margin-top: 25px; display: flex; justify-content: center;">
-            <div class="img-wrapper" onclick="openLightbox('BGCC_Analytics.png')" style="max-width: 800px; width: 100%; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
-                <img src="BGCC_Analytics.png" alt="Analytics Bài Gì Cũng Có" style="width: 100%; height: auto; object-fit: contain; padding: 10px; display: block;">
-                <span class="img-hint">Phóng to số liệu</span>
+        <div class="perf-images-large" style="margin-top: 35px; display: flex; justify-content: center;">
+            <div class="reveal-card-glow-super" onclick="openLightbox('BGCC_Analytics.png')" style="max-width: 800px; width: 100%; aspect-ratio: 16/9;">
+                <div class="img-content-block" style="background: #f8fafc;">
+                    <img src="BGCC_Analytics.png" alt="Analytics" style="object-fit: contain; padding: 15px;">
+                </div>
             </div>
         </div>
 
@@ -1358,27 +1428,21 @@
                 </div>
             </div>
             
-            <div class="main-topic" style="margin-top: 40px; text-align: center;">
+            <div class="main-topic" style="margin-top: 50px; text-align: center;">
                 <h2 style="color: var(--text-color); font-weight: 800; font-size: 2rem; margin-bottom: 15px; text-transform: uppercase;">Định hướng nội dung</h2>
-                <p style="color: var(--slate-400); line-height: 1.6; max-width: 800px; margin: 0 auto 30px;">
-                    Kênh thông tin tổng hợp về nghệ sĩ và các sản phẩm âm nhạc trên thị trường. Tập trung vào việc tạo ra những trải nghiệm âm nhạc đa dạng cho khán giả.
+                <p style="color: var(--slate-400); line-height: 1.6; max-width: 800px; margin: 0 auto 35px;">
+                    Kênh thông tin tổng hợp về nghệ sĩ và âm nhạc. Tập trung tối đa vào việc tạo ra nội dung viral với sức nóng lan tỏa mạnh mẽ trên cộng đồng TikTok.
                 </p>
                 
-                <div class="content-grid-reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div class="content-grid-reveal" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px;">
                     <div class="reveal-card-glow-super" onclick="openLightbox('bgcc_1.png')" style="aspect-ratio: 9/16;">
-                        <div class="img-content-block">
-                            <img src="bgcc_1.png">
-                        </div>
+                        <div class="img-content-block"><img src="bgcc_1.png"></div>
                     </div>
                     <div class="reveal-card-glow-super" onclick="openLightbox('bgcc_2.png')" style="aspect-ratio: 9/16;">
-                        <div class="img-content-block">
-                            <img src="bgcc_2.png">
-                        </div>
+                        <div class="img-content-block"><img src="bgcc_2.png"></div>
                     </div>
                     <div class="reveal-card-glow-super" onclick="openLightbox('bgcc_3.png')" style="aspect-ratio: 9/16;">
-                        <div class="img-content-block">
-                            <img src="bgcc_3.png">
-                        </div>
+                        <div class="img-content-block"><img src="bgcc_3.png"></div>
                     </div>
                 </div>
             </div>
