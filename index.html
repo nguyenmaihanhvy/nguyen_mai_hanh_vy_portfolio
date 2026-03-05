@@ -1084,137 +1084,134 @@
             </div>
         </div>
 
-        <div class="performance-block" style="margin-top: 50px; border-top: 1px dashed #e2e8f0; padding-top: 40px;">
-            <h3 class="company-label">MCV Network</h3>
-            <div class="perf-card-large">
-                <div class="card-header-flex" style="justify-content: space-between; flex-wrap: wrap; gap: 15px;">
-                    <div style="display: flex; align-items: center; gap: 12px;">
-                        <i class="fab fa-tiktok" style="color: #010101; font-size: 1.8rem;"></i>
-                        <span style="color: var(--text-color); font-size: 1.2rem; font-weight: 800;">WeTunes</span>
-                    </div>
-                    <a href="https://www.tiktok.com/@wetunes.wn" target="_blank" class="btn-outline" style="padding: 0.5rem 1rem; font-size: 0.8rem; border-radius: 8px; text-decoration: none; display: flex; align-items: center; gap: 8px;">
-                        Ghé thăm TikTok <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
+        <style>
+    .reveal-card-glow-super-blue {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        background: #fff;
+        padding: 5px; /* Viền dày tạo độ rực rỡ */
+        transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        z-index: 1;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
 
-                <div class="perf-images-large" style="margin-top: 25px; display: flex; justify-content: center;">
-                    <div class="img-wrapper" onclick="openLightbox('WT_TikTok_Analytics.png')" style="max-width: 800px; width: 100%; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
-                        <img src="WT_TikTok_Analytics.png" alt="Analytics WeTunes TikTok" style="width: 100%; height: auto; object-fit: contain; padding: 5px;">
-                        <span class="img-hint">Phóng to số liệu TikTok</span>
-                    </div>
-                </div>
+    /* Dải màu Xanh - Tím Neon */
+    .reveal-card-glow-super-blue::before, 
+    .reveal-card-glow-super-blue::after {
+        content: '';
+        position: absolute;
+        background: conic-gradient(
+            transparent, 
+            #00f2ff, /* Cyan sáng */
+            #4f46e5, /* Indigo (Xanh tím) */
+            #a855f7, /* Purple (Tím) */
+            transparent
+        );
+        animation: rotateGlowBlue 3s linear infinite;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
 
-                <div class="perf-content">
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <span class="stat-label">Lượt theo dõi</span>
-                            <span class="stat-value">+7K followers</span>
-                            <span class="stat-time">(07/2025 - 02/2026)</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Tổng lượt xem</span>
-                            <span class="stat-value">~11M views</span>
-                            <span class="stat-time">(12/2025 - 02/2026)</span>
-                        </div>
+    .reveal-card-glow-super-blue::before {
+        width: 200%; height: 200%;
+        top: -50%; left: -50%;
+        z-index: -2;
+    }
+
+    /* Hào quang (Glow) tỏa rộng */
+    .reveal-card-glow-super-blue::after {
+        inset: -15px;
+        filter: blur(20px);
+        z-index: -1;
+    }
+
+    /* Kích hoạt hiệu ứng "cháy" khi hover */
+    .reveal-card-glow-super-blue:hover::before,
+    .reveal-card-glow-super-blue:hover::after {
+        opacity: 1;
+        animation: rotateGlowBlue 2s linear infinite, pulseBlueGlow 1.2s ease-in-out infinite alternate;
+    }
+
+    .reveal-card-glow-super-blue .img-content-block {
+        position: relative;
+        background: white;
+        border-radius: 11px;
+        z-index: 0;
+        overflow: hidden;
+        width: 100%; height: 100%;
+    }
+
+    .reveal-card-glow-super-blue img {
+        display: block; width: 100%; height: 100%; object-fit: cover; transition: 0.6s ease;
+    }
+
+    .reveal-card-glow-super-blue:hover { transform: translateY(-12px) scale(1.02); }
+
+    @keyframes rotateGlowBlue { 100% { transform: rotate(360deg); } }
+    
+    @keyframes pulseBlueGlow {
+        0% { filter: blur(20px) brightness(1); }
+        100% { filter: blur(30px) brightness(1.6); } /* Tỏa sáng rực rỡ hơn */
+    }
+</style>
+
+<div class="performance-block" style="margin-top: 50px; border-top: 1px dashed #e2e8f0; padding-top: 40px;">
+    <h3 class="company-label">MCV Network</h3>
+    <div class="perf-card-large">
+        <div class="card-header-flex" style="justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <i class="fab fa-tiktok" style="color: #010101; font-size: 1.8rem;"></i>
+                <span style="color: var(--text-color); font-size: 1.2rem; font-weight: 800;">WeTunes TikTok</span>
+            </div>
+            <a href="https://www.tiktok.com/@wetunes.wn" target="_blank" class="btn-outline" style="padding: 0.5rem 1rem; font-size: 0.8rem; border-radius: 8px; text-decoration: none; display: flex; align-items: center; gap: 8px;">
+                Ghé thăm TikTok <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+
+        <div class="perf-images-large" style="margin-top: 35px; display: flex; justify-content: center;">
+            <div class="reveal-card-glow-super-blue" onclick="openLightbox('WT_TikTok_Analytics.png')" style="max-width: 800px; width: 100%; aspect-ratio: 16/9;">
+                <div class="img-content-block" style="background: #f8fafc;">
+                    <img src="WT_TikTok_Analytics.png" alt="Analytics" style="object-fit: contain; padding: 15px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="perf-content">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-label">Lượt theo dõi</span>
+                    <span class="stat-value">+7K followers</span>
+                    <span class="stat-time">(07/2025 - 02/2026)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Tổng lượt xem</span>
+                    <span class="stat-value">~11M views</span>
+                    <span class="stat-time">(12/2025 - 02/2026)</span>
+                </div>
+            </div>
+            
+            <div class="main-topic" style="margin-top: 50px; text-align: center;">
+                <h2 style="color: var(--text-color); font-weight: 800; font-size: 2rem; margin-bottom: 15px; text-transform: uppercase;">Định hướng nội dung</h2>
+                <p style="color: var(--slate-400); line-height: 1.6; max-width: 800px; margin: 0 auto 35px;">
+                    Cập nhật liên tục tin tức giải trí, showbiz. Tập trung khai thác những xu hướng âm nhạc thịnh hành nhất với phong cách sáng tạo và cuốn hút.
+                </p>
+                
+                <div class="content-grid-reveal" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px;">
+                    <div class="reveal-card-glow-super-blue" onclick="openLightbox('tk_content_1.png')" style="aspect-ratio: 9/16;">
+                        <div class="img-content-block"><img src="tk_content_1.png"></div>
                     </div>
-                    
-                    <div class="main-topic" style="margin-top: 40px; text-align: center;">
-                        <h2 style="color: var(--text-color); font-weight: 800; font-size: 2rem; margin-bottom: 15px; text-transform: uppercase;">Định hướng nội dung</h2>
-                        <p style="color: var(--slate-400); line-height: 1.6; max-width: 800px; margin: 0 auto 30px;">
-                            Cập nhật liên tục tin tức giải trí, showbiz.
-                        </p>
-                        
-                        <div class="content-grid-reveal" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-                            <div class="reveal-card" onclick="openLightbox('tk_content_1.png')" style="position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 9/16; cursor: pointer;">
-                                <img src="tk_content_1.png" style="width: 100%; height: 100%; object-fit: cover; transition: 0.5s;">
-                                <div class="reveal-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(79, 70, 229, 0.9), transparent); display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; opacity: 0; transform: translateY(100%); transition: 0.4s;">
-                                    <h4 style="color: #fff; margin-bottom: 5px;"></h4>
-                                    <p style="color: #eee; font-size: 0.8rem;"></p>
-                                </div>
-                            </div>
-                            <div class="reveal-card" onclick="openLightbox('tk_content_2.png')" style="position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 9/16; cursor: pointer;">
-                                <img src="tk_content_2.png" style="width: 100%; height: 100%; object-fit: cover; transition: 0.5s;">
-                                <div class="reveal-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(79, 70, 229, 0.9), transparent); display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; opacity: 0; transform: translateY(100%); transition: 0.4s;">
-                                    <h4 style="color: #fff; margin-bottom: 5px;"></h4>
-                                    <p style="color: #eee; font-size: 0.8rem;"></p>
-                                </div>
-                            </div>
-                            <div class="reveal-card" onclick="openLightbox('tk_content_3.png')" style="position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 9/16; cursor: pointer;">
-                                <img src="tk_content_3.png" style="width: 100%; height: 100%; object-fit: cover; transition: 0.5s;">
-                                <div class="reveal-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(79, 70, 229, 0.9), transparent); display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; opacity: 0; transform: translateY(100%); transition: 0.4s;">
-                                    <h4 style="color: #fff; margin-bottom: 5px;"></h4>
-                                    <p style="color: #eee; font-size: 0.8rem;"></p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="reveal-card-glow-super-blue" onclick="openLightbox('tk_content_2.png')" style="aspect-ratio: 9/16;">
+                        <div class="img-content-block"><img src="tk_content_2.png"></div>
+                    </div>
+                    <div class="reveal-card-glow-super-blue" onclick="openLightbox('tk_content_3.png')" style="aspect-ratio: 9/16;">
+                        <div class="img-content-block"><img src="tk_content_3.png"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <style>
-    /* Hiệu ứng viền sáng chạy quanh cho mục TikTok */
-    .reveal-card-glow {
-        position: relative;
-        border-radius: 16px;
-        overflow: hidden;
-        background: #fff;
-        padding: 3px; /* Độ dày của viền sáng */
-        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        z-index: 1;
-    }
-
-    /* Lớp màu xoay phía dưới tạo hiệu ứng viền */
-    .reveal-card-glow::before {
-        content: '';
-        position: absolute;
-        width: 150%;
-        height: 150%;
-        background: conic-gradient(transparent, #4f46e5, transparent, #ec4899, transparent);
-        top: -25%;
-        left: -25%;
-        animation: rotateGlow 4s linear infinite;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        z-index: -1;
-    }
-
-    /* Lớp nền trắng chặn để ảnh không bị lộ viền bên trong */
-    .reveal-card-glow::after {
-        content: '';
-        position: absolute;
-        inset: 3px;
-        background: white;
-        border-radius: 13px;
-        z-index: 0;
-    }
-
-    .reveal-card-glow img {
-        position: relative;
-        z-index: 1;
-        border-radius: 13px;
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: 0.5s ease;
-    }
-
-    .reveal-card-glow:hover {
-        transform: translateY(-10px);
-    }
-
-    .reveal-card-glow:hover::before {
-        opacity: 1;
-    }
-
-    .reveal-card-glow:hover img {
-        transform: scale(1.02);
-    }
-
-    @keyframes rotateGlow {
-        100% { transform: rotate(360deg); }
-    }
+</div>
 </style>
 
 <style>
@@ -1503,3 +1500,4 @@
         document.body.style.overflow = 'auto'; 
     }
 </script>
+
