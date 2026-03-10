@@ -133,13 +133,25 @@
             .section-title { font-size: 1.8rem; }
         }
 /* Hiệu ứng chuyển chữ cho Sub-headline */
+/* Câu slogan chính */
+.slogan-text {
+    font-size: 1.5rem; /* To hơn đoạn văn thường (1.1rem) */
+    font-weight: 700;
+    color: var(--text-color);
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    display: block; /* Tách biệt hoàn toàn với đoạn dưới */
+}
+
+/* Hiệu ứng chữ chạy */
 .flip-wrapper {
     display: inline-block;
     position: relative;
-    color: var(--accent-color);
+    color: var(--accent-color); /* Màu xanh Indigo theo flow của bạn */
     font-weight: 800;
-    min-width: 140px; /* Độ rộng này để giữ các chữ xung quanh không bị nhảy */
+    min-width: 160px; /* Tăng nhẹ độ rộng vì chữ to hơn */
     text-align: center;
+    border-bottom: 2px solid rgba(79, 70, 229, 0.2); /* Thêm gạch chân mờ cho tinh tế */
 }
 
 .flip-text {
@@ -147,15 +159,8 @@
     transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.fade-out {
-    opacity: 0;
-    transform: translateY(-15px);
-}
-
-.fade-in {
-    opacity: 0;
-    transform: translateY(15px);
-}
+.fade-out { opacity: 0; transform: translateY(-10px); }
+.fade-in { opacity: 0; transform: translateY(10px); }
     </style>
 </head>
 <body>
@@ -280,13 +285,17 @@
             <span style="color: var(--accent-color); font-family: monospace; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Xin chào, tôi tên là</span>
             <h1>Nguyễn Mai Hạnh Vy.</h1>
             <div class="intro-text">
-    Kết nối giá trị 
-    <span class="flip-wrapper">
-        <span id="flip-text" class="flip-text">con người</span>
-    </span> 
-    qua những điểm chạm cảm xúc tinh tế.
-    <br><br>
-   Tôi yêu thích việc dành nhiều thời gian để <strong>lắng nghe và học hỏi<strong>, nhằm nuôi dưỡng cảm xúc, bồi dưỡng nền tảng kiến thức vững chắc cho hành trình tương lai.
+    <span class="slogan-text">
+        Kết nối giá trị 
+        <span class="flip-wrapper">
+            <span id="flip-text" class="flip-text">con người</span>
+        </span> 
+        qua những điểm chạm cảm xúc tinh tế.
+    </span>
+
+    <p style="font-size: 1rem; opacity: 0.8; margin-top: 1rem; border-top: 1px solid #eee; padding-top: 1rem;">
+        Tôi yêu thích việc dành nhiều thời gian để <strong>lắng nghe và học hỏi<strong>, nhằm nuôi dưỡng cảm xúc, bồi dưỡng nền tảng kiến thức vững chắc cho hành trình tương lai.
+    </p>
 </div>
             <div class="btn-group">
                 <a href="mailto:nmhv29@gmail.com" class="btn btn-filled">Kết nối với tôi</a>
