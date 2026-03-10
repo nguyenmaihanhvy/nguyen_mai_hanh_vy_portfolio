@@ -312,45 +312,58 @@
 .stat-badge strong {
     color: var(--accent-color);
 }
-/* Layout Chỉ số Flex thành tích */
-.stats-flex-container {
-    display: flex;
-    gap: 60px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-flex-wrap: wrap;
+/* Khung viền bao ngoài 2 chỉ số */
+.stats-badge-container {
+    display: inline-flex; /* Chỉ rộng bằng nội dung bên trong */
+    align-items: center;
+    gap: 50px; /* Khoảng cách giữa 2 cụm số */
+    padding: 20px 40px;
+    background: #ffffff;
+    border: 1px solid rgba(79, 70, 229, 0.2); /* Viền màu xanh Indigo nhạt */
+    border-radius: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02); /* Đổ bóng cực nhẹ cho sang */
 }
 
 .stat-box {
-    text-align: left; /* Căn trái cho giống phong cách hiện đại */
-flex: 1;
-min-width: max-content;
+    text-align: left;
 }
 
 .stat-number {
     display: block;
-    font-size: 3.5rem; /* Số rất to để gây ấn tượng */
+    font-size: 2.5rem; /* Điều chỉnh lại cỡ chữ cho vừa khung */
     font-weight: 800;
-    color: var(--accent-color); /* Màu xanh Indigo của bạn */
+    color: var(--accent-color);
     line-height: 1;
-    letter-spacing: -2px;
 }
 
 .stat-label {
     display: block;
     font-size: 0.65rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--slate-400);
     text-transform: uppercase;
-    letter-spacing: 1.2px;
-    margin-top: 5px;
-opacity: 0.9;
-white-space: nowrap;
+    letter-spacing: 1px;
+    margin-top: 8px;
+    white-space: nowrap; /* Giữ chữ luôn nằm trên 1 hàng */
 }
 
-@media (max-width: 768px) {
-    .stats-flex-container { gap: 20px; }
-    .stat-number { font-size: 2.5rem; }
+/* Kẻ sọc ngăn cách giữa 2 chỉ số (tùy chọn) */
+.stat-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 600px) {
+    .stats-badge-container { 
+        display: flex; /* Chuyển sang dọc trên mobile nếu quá chật */
+        flex-direction: column; 
+        gap: 30px;
+        padding: 30px;
+    }
+    .stat-divider { display: none; }
 }
     </style>
 
@@ -379,7 +392,7 @@ white-space: nowrap;
         <span class="stat-number">01+</span>
         <span class="stat-label">Năm kinh nghiệm</span>
     </div>
-
+<div class="stat-divider"></div>
     <div class="stat-box">
         <span class="stat-number">60K+</span>
         <span class="stat-label">tăng trưởng followers trong 7 tháng</span>
