@@ -1,3 +1,1138 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Nguyễn Mai Hạnh Vy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { 
+            /* Bảng màu mới: Bright & Professional */
+            --bg-color: #ffffff; 
+            --text-color: #0f172a; 
+            --accent-color: #4f46e5; /* Indigo trẻ trung */
+            --secondary-bg: #f8fafc; 
+            --slate-400: #64748b; 
+            --nav-bg: rgba(255, 255, 255, 0.85);
+            --max-width: 1000px; 
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+        
+        body { 
+            margin: 0; 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-color); 
+            line-height: 1.7; 
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Navigation Tối ưu UX/UI */
+        nav { 
+            display: flex; 
+            justify-content: center; 
+            padding: 0; 
+            position: fixed; 
+            width: 100%; 
+            top: 0; 
+            background: var(--nav-bg); 
+            backdrop-filter: blur(12px); 
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 1000; 
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05); 
+            transition: var(--transition);
+        }
+
+        .nav-container { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            width: 100%; 
+            max-width: var(--max-width); 
+            padding: 1.2rem 2rem; 
+        }
+        
+        .logo { 
+            font-weight: 800; 
+            font-size: 1.3rem; 
+            color: var(--text-color); 
+            text-transform: uppercase; 
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            margin-left: 4px;
+        }
+
+        nav ul { 
+            display: flex; 
+            list-style: none; 
+            gap: 2.5rem; 
+            margin: 0; 
+            padding: 0; 
+        }
+
+        nav a { 
+            text-decoration: none; 
+            color: var(--text-color); 
+            font-size: 0.9rem; 
+            font-weight: 600; 
+            transition: var(--transition);
+            opacity: 0.7;
+        }
+
+        nav a:hover { 
+            color: var(--accent-color); 
+            opacity: 1;
+        }
+
+        /* Tối ưu các section chung */
+        section { 
+            padding: 120px 2rem 80px; 
+            max-width: var(--max-width); 
+            margin: 0 auto; 
+        }
+
+        .section-title { 
+            font-size: 2.25rem; 
+            font-weight: 800;
+            margin-bottom: 3rem; 
+            position: relative; 
+            display: flex; 
+            align-items: center; 
+            width: 100%; 
+            white-space: nowrap; 
+            letter-spacing: -1px;
+        }
+
+        .section-title::after { 
+            content: ''; 
+            display: block; 
+            height: 2px; 
+            width: 100%; 
+            max-width: 200px; 
+            background: linear-gradient(to right, var(--accent-color), transparent); 
+            margin-left: 20px; 
+            border-radius: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container { padding: 1rem 1.5rem; }
+            nav ul { gap: 1.2rem; }
+            nav a { font-size: 0.8rem; }
+            .section-title { font-size: 1.8rem; }
+        }
+/* Hiệu ứng chuyển chữ cho Sub-headline */
+/* Câu slogan chính */
+.slogan-text {
+    font-size: 1.5rem; /* To hơn đoạn văn thường (1.1rem) */
+    font-weight: 700;
+    color: var(--text-color);
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    display: block; /* Tách biệt hoàn toàn với đoạn dưới */
+}
+
+/* Hiệu ứng chữ chạy */
+.flip-wrapper {
+    display: inline-block;
+    position: relative;
+    color: var(--accent-color); /* Màu xanh Indigo theo flow của bạn */
+    font-weight: 800;
+    min-width: 160px; /* Tăng nhẹ độ rộng vì chữ to hơn */
+    text-align: center;
+    border-bottom: 2px solid rgba(79, 70, 229, 0.2); /* Thêm gạch chân mờ cho tinh tế */
+}
+
+.flip-text {
+    display: inline-block;
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.fade-out { opacity: 0; transform: translateY(-10px); }
+.fade-in { opacity: 0; transform: translateY(10px); }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Hạnh Vy</div>
+            <ul>
+                <li><a href="#about">Giới thiệu</a></li>
+                <li><a href="#education">Học vấn</a></li>
+                <li><a href="#skills">Kỹ năng</a></li>
+                <li><a href="#experience">Kinh nghiệm</a></li>
+            </ul>
+        </div>
+    </nav>
+<style>
+        /* CSS bổ sung dành riêng cho Hero Section */
+        .hero { 
+            min-height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            gap: 4rem; 
+            padding-top: 100px;
+        }
+
+        .hero-image { 
+            width: 320px; 
+            height: 320px; 
+            /* Shape theo trend organic đang rất hot trong ngành Media */
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            border: 2px solid var(--accent-color); 
+            overflow: hidden; 
+            flex-shrink: 0; 
+            box-shadow: 20px 20px 50px rgba(79, 70, 229, 0.1); 
+            background: var(--secondary-bg);
+            transition: var(--transition);
+            animation: morph 8s ease-in-out infinite;
+        }
+
+        @keyframes morph {
+            0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+            100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        }
+
+        .hero-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 30px 60px rgba(79, 70, 229, 0.15);
+        }
+
+        .hero-image img { width: 100%; height: 100%; object-fit: cover; }
+
+        .hero-content { flex: 1; }
+
+        .hero h1 { 
+            font-size: clamp(2.5rem, 5vw, 4rem); 
+            margin: 10px 0 20px 0; 
+            line-height: 1.1; 
+            color: var(--text-color); 
+            font-weight: 800;
+            letter-spacing: -2px;
+        }
+
+        .intro-text { 
+            font-size: 1.1rem; 
+            color: var(--slate-400); 
+            max-width: 600px; 
+            margin-bottom: 2.5rem; 
+            border-left: 3px solid var(--accent-color); 
+            padding-left: 20px; 
+            line-height: 1.8;
+        }
+
+        /* Tối ưu lại Button cho trend sáng sủa */
+        .btn { 
+            display: inline-block; 
+            padding: 1rem 2rem; 
+            border-radius: 12px; 
+            text-decoration: none; 
+            font-size: 0.95rem; 
+            transition: var(--transition); 
+            font-weight: 700;
+        }
+
+        .btn-filled { 
+            background: var(--accent-color); 
+            color: #ffffff; 
+            border: 1px solid var(--accent-color);
+            box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+        }
+
+        .btn-filled:hover { 
+            background: #3730a3; /* Indigo đậm hơn khi hover */
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(79, 70, 229, 0.3);
+        }
+
+        .btn-outline { 
+            background: transparent; 
+            border: 2px solid #e2e8f0; 
+            color: var(--text-color); 
+        }
+
+        .btn-outline:hover { 
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 992px) {
+            .hero { flex-direction: column-reverse; text-align: center; gap: 2rem; }
+            .intro-text { margin: 0 auto 2.5rem; border-left: none; border-top: 3px solid var(--accent-color); padding: 20px 0 0; }
+            .btn-group { display: flex; flex-direction: column; gap: 10px; }
+            .btn { margin: 0 !important; width: 100%; }
+        }
+.quick-stats {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.stat-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(79, 70, 229, 0.05); /* Màu xanh Indigo nhạt */
+    padding: 8px 16px;
+    border-radius: 50px;
+    border: 1px solid rgba(79, 70, 229, 0.1);
+    transition: var(--transition);
+}
+
+.stat-badge:hover {
+    background: rgba(79, 70, 229, 0.1);
+    transform: translateY(-2px);
+}
+
+.stat-badge i {
+    color: var(--accent-color);
+    font-size: 1rem;
+}
+
+.stat-badge span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.stat-badge strong {
+    color: var(--accent-color);
+}
+/* Khung viền bao ngoài 2 chỉ số */
+.stats-badge-container {
+    display: inline-flex; /* Ép nằm ngang và chỉ rộng bằng nội dung */
+    align-items: center;
+    gap: 40px; 
+    padding: 20px 35px;
+    background: #ffffff;
+    border: 1.5px solid rgba(79, 70, 229, 0.3); /* Viền màu xanh Indigo */
+    border-radius: 20px;
+    margin: 25px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.stat-box {
+    text-align: left;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.2rem; /* Chỉnh nhỏ lại một xíu để vừa khung */
+    font-weight: 800;
+    color: var(--accent-color);
+    line-height: 1.1;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--slate-400);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap; /* Ép chữ không được xuống dòng */
+}
+
+/* Đường kẻ dọc ngăn cách giữa 2 chỉ số */
+.stat-divider {
+    width: 1px;
+    height: 45px;
+    background: rgba(79, 70, 229, 0.15);
+}
+    </style>
+
+    <section id="about" class="hero">
+        <div class="hero-image">
+            <img src="avatar.png" alt="Avatar" onerror="this.src='https://ui-avatars.com/api/?name=Hanh+Vy&background=4f46e5&color=fff&size=320'">
+        </div>
+        <div class="hero-content">
+            <span style="color: var(--accent-color); font-family: monospace; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Xin chào, tôi tên là</span>
+            <h1>Nguyễn Mai Hạnh Vy.</h1>
+            <div class="intro-text">
+    <span class="slogan-text">
+        Kết nối giá trị 
+        <span class="flip-wrapper">
+            <span id="flip-text" class="flip-text">con người</span>
+        </span> 
+        qua những điểm chạm cảm xúc tinh tế.
+    </span>
+
+    <p style="font-size: 1rem; opacity: 0.8; margin-top: 1rem; border-top: 1px solid #eee; padding-top: 1rem;">
+        Tôi yêu thích việc dành nhiều thời gian để <strong>lắng nghe và học hỏi</strong>, nhằm <strong>nuôi dưỡng cảm xúc, bồi dưỡng nền tảng kiến thức</strong> vững chắc cho hành trình tương lai.
+    </p>
+</div>
+<div class="stats-badge-container">
+    <div class="stat-box">
+        <span class="stat-number">01+</span>
+        <span class="stat-label">Năm kinh nghiệm</span>
+    </div>
+
+    <div class="stat-divider"></div>
+
+    <div class="stat-box">
+        <span class="stat-number">60K+</span>
+        <span class="stat-label">Tăng trưởng followers trong 7 tháng</span>
+    </div>
+</div>
+
+<div class="btn-group" style="margin-top: 30px;">
+</div>
+            <div class="btn-group">
+                <a href="mailto:nmhv29@gmail.com" class="btn btn-filled">Kết nối với tôi</a>
+                <a href="CV_NguyenMaiHanhVy.pdf" class="btn btn-outline" download style="margin-left: 10px;">Tải CV</a>
+            </div>
+        </div>
+    </section>
+<style>
+        /* Tối ưu UI cho phần Education & Tabs */
+        .jobs-container {
+            display: flex;
+            gap: 40px;
+            margin-top: 2rem;
+        }
+
+        .tab-list {
+            border-left: 2px solid #e2e8f0; /* Màu xám nhạt hiện đại */
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            min-width: 200px;
+        }
+
+        .tab-item {
+            padding: 15px 25px;
+            cursor: pointer;
+            color: var(--slate-400);
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: var(--transition);
+            border-left: 2px solid transparent;
+            margin-left: -2px; /* Đè lên đường kẻ chính */
+        }
+
+        .tab-item:hover {
+            color: var(--accent-color);
+            background: rgba(79, 70, 229, 0.05);
+        }
+
+        .tab-item.active {
+            color: var(--accent-color);
+            border-left: 2px solid var(--accent-color);
+            background: rgba(79, 70, 229, 0.08);
+        }
+
+        .job-content h3 {
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        /* Card hiển thị nội dung học vấn/chứng chỉ */
+        .edu-description-card {
+            list-style: none;
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 16px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+            margin-top: 1.5rem;
+        }
+
+        .edu-description-card li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            color: var(--slate-400);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .edu-description-card li span.bullet {
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .cert-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 25px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .cert-link-btn:hover {
+            gap: 15px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .jobs-container { flex-direction: column; gap: 20px; }
+            .tab-list { 
+                display: flex; 
+                border-left: none; 
+                border-bottom: 2px solid #e2e8f0; 
+                overflow-x: auto;
+                min-width: 100%;
+            }
+            .tab-item { 
+                border-left: none; 
+                border-bottom: 2px solid transparent; 
+                margin-left: 0;
+                margin-bottom: -2px;
+                white-space: nowrap;
+            }
+            .tab-item.active { border-bottom: 2px solid var(--accent-color); }
+        }
+    </style>
+
+    <style>
+    /* CSS cho phần Education */
+    .jobs-container {
+        display: flex;
+        gap: 40px;
+        margin-top: 2rem;
+        align-items: flex-start;
+    }
+
+    /* Danh sách Tab */
+    .tab-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        min-width: 180px;
+        border-left: 2px solid #e2e8f0;
+    }
+
+    .tab-item {
+        padding: 15px 20px;
+        cursor: pointer;
+        color: var(--slate-400);
+        font-size: 0.95rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border-left: 2px solid transparent;
+        margin-left: -2px;
+    }
+
+    .tab-item:hover {
+        color: var(--accent-color);
+        background: rgba(79, 70, 229, 0.05);
+    }
+
+    /* Trạng thái Tab đang hoạt động */
+    .tab-item.active {
+        color: var(--accent-color);
+        border-left: 2px solid var(--accent-color);
+        background: rgba(79, 70, 229, 0.1);
+    }
+
+    .job-content {
+        flex: 1;
+        min-height: 300px; /* Giữ khung ổn định khi chuyển tab */
+    }
+
+    .job-content h3 {
+        margin: 0;
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: var(--text-color);
+    }
+
+    .job-content .date-text {
+        font-size: 0.85rem;
+        color: var(--slate-400);
+        margin: 8px 0 20px;
+        font-family: monospace;
+        font-weight: 600;
+    }
+
+    /* Fix lỗi khung văn bản không đều */
+    .project-description-new {
+        list-style: none;
+        padding: 25px;
+        background: #ffffff; /* Nền trắng sáng */
+        border-radius: 12px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        margin: 0;
+        width: 100%; /* Đảm bảo khung luôn đều */
+    }
+
+    .project-description-new li {
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 12px;
+        color: var(--slate-400);
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .project-description-new li::before {
+        content: '▹';
+        position: absolute;
+        left: 0;
+        color: var(--accent-color);
+        font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+        .jobs-container { flex-direction: column; }
+        .tab-list { 
+            display: flex; 
+            border-left: none; 
+            border-bottom: 2px solid #e2e8f0; 
+            width: 100%; 
+            overflow-x: auto; 
+        }
+        .tab-item { 
+            border-left: none; 
+            border-bottom: 2px solid transparent; 
+            margin-left: 0; 
+            margin-bottom: -2px; 
+        }
+        .tab-item.active { border-bottom: 2px solid var(--accent-color); }
+    }
+</style>
+
+<section id="education">
+    <h2 class="section-title">Học vấn</h2>
+    <div class="jobs-container">
+        <div class="tab-list">
+            <div class="tab-item active" onclick="showTab('edu')" id="tab-edu">Chuyên môn</div>
+            <div class="tab-item" onclick="showTab('cert')" id="tab-cert">Chứng chỉ</div>
+        </div>
+        
+        <div class="job-content">
+            <div id="edu-content">
+                <h3>Truyền thông Marketing <span style="color: var(--accent-color);">@ Đại học Tài chính - Marketing</span></h3>
+                <p class="date-text">2021 - 2025</p>
+                <ul class="project-description-new">
+                    <li>Tốt nghiệp loại Giỏi chuyên ngành Truyền thông Marketing.</li>
+                    <li>Đạt danh hiệu Sinh Viên 5 Tốt cấp Khoa năm 2022 - 2023 .</li>
+                </ul>
+            </div>
+
+            <div id="cert-content" style="display: none;">
+                <h3>Chứng chỉ chuyên môn</h3>
+                <p class="date-text">2021 - 2024</p>
+                <ul class="project-description-new">
+                    <li>800 TOEIC | 2024</li>
+                    <li>MOS Excel 2016 | 2024</li>
+                    <li>MOS Word 2016 | 2022</li>
+                    <li>The Fundamentals of Digital Marketing | 2021</li>
+                    <li>Digital Body Language | 2021</li>
+                </ul>
+                <a href="https://drive.google.com/drive/folders/1--cnJpvD1aERClkD5jV259e1Td-h_BZb" target="_blank" class="btn btn-outline" style="margin-top: 20px;">Xem kho chứng chỉ →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    /* Hàm JavaScript để chuyển đổi Tab */
+    function showTab(type) {
+        const eduTab = document.getElementById('tab-edu');
+        const certTab = document.getElementById('tab-cert');
+        const eduContent = document.getElementById('edu-content');
+        const certContent = document.getElementById('cert-content');
+        
+        if (type === 'edu') {
+            // Update Tab UI
+            eduTab.classList.add('active');
+            certTab.classList.remove('active');
+            // Update Content UI
+            eduContent.style.display = 'block';
+            certContent.style.display = 'none';
+        } else {
+            // Update Tab UI
+            certTab.classList.add('active');
+            eduTab.classList.remove('active');
+            // Update Content UI
+            eduContent.style.display = 'none';
+            certContent.style.display = 'block';
+        }
+    }
+</script>
+<style>
+    .category { 
+        color: var(--slate-400); 
+        font-size: 0.85rem; 
+        text-transform: uppercase; 
+        letter-spacing: 2px; 
+        margin: 3rem 0 1.5rem; 
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+    }
+    
+    .category::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: #e2e8f0;
+        margin-left: 15px;
+    }
+
+    /* Container bao ngoài để ẩn phần thừa */
+    .skills-slider-viewport {
+        width: 100%;
+        overflow: hidden;
+        padding: 20px 0;
+        position: relative;
+    }
+
+    /* Thanh chứa các item chạy ngang */
+    .skills-track {
+        display: flex;
+        gap: 1.5rem;
+        width: max-content;
+        animation: scrollSkills 25s linear infinite; /* Tốc độ chạy */
+    }
+
+    /* Tạm dừng khi di chuột vào để người dùng kịp đọc */
+    .skills-slider-viewport:hover .skills-track {
+        animation-play-state: paused;
+    }
+
+    .skill-item { 
+        background: #ffffff; 
+        padding: 2rem 1.5rem; 
+        border-radius: 20px; 
+        text-align: center; 
+        border: 1px solid rgba(0, 0, 0, 0.05); 
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+        width: 180px; /* Độ rộng cố định cho mỗi card */
+        flex-shrink: 0;
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: var(--text-color);
+    }
+
+    .skill-item:hover { 
+        border-color: var(--accent-color); 
+        transform: translateY(-10px); 
+        box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.1);
+    }
+
+    .skill-item i { 
+        font-size: 2.5rem; 
+        color: var(--accent-color); 
+        margin-bottom: 15px; 
+    }
+
+    /* Hiệu ứng chạy vô tận */
+    @keyframes scrollSkills {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-180px * 6 - 1.5rem * 6)); } 
+        /* Công thức: -(Độ rộng card * số lượng card gốc + Gap * số lượng card gốc) */
+    }
+/* Animation trượt từ trái sang phải cho Công cụ */
+.skills-track-reverse {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    animation: scrollTools 30s linear infinite; /* Chậm hơn một chút cho dễ nhìn */
+}
+
+@keyframes scrollTools {
+    0% { transform: translateX(calc(-180px * 8 - 1.5rem * 8)); } 
+    100% { transform: translateX(0); }
+}
+
+/* Giữ style cho hình ảnh công cụ */
+.skill-item img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    margin-bottom: 12px;
+    filter: grayscale(10%);
+    transition: var(--transition);
+}
+
+.skill-item:hover img {
+    filter: grayscale(0%) scale(1.1);
+}
+</style>
+
+<section id="skills">
+    <h2 class="section-title">Kỹ năng & Công cụ</h2>
+    
+    <h3 class="category">Kỹ năng</h3>
+    <div class="skills-slider-viewport">
+        <div class="skills-track">
+            <div class="skill-item"><i class="fas fa-search"></i>Nghiên cứu</div>
+            <div class="skill-item"><i class="fas fa-calendar-alt"></i>Lập kế hoạch</div>
+            <div class="skill-item"><i class="fas fa-lightbulb"></i>Sáng tạo nội dung</div>
+            <div class="skill-item"><i class="fas fa-clock"></i>Quản lý thời gian</div>
+            <div class="skill-item"><i class="fas fa-users"></i>Làm việc nhóm</div>
+            <div class="skill-item"><i class="fas fa-robot"></i>Sử dụng AI</div>
+
+            <div class="skill-item"><i class="fas fa-search"></i>Nghiên cứu</div>
+            <div class="skill-item"><i class="fas fa-calendar-alt"></i>Lập kế hoạch</div>
+            <div class="skill-item"><i class="fas fa-lightbulb"></i>Sáng tạo nội dung</div>
+            <div class="skill-item"><i class="fas fa-clock"></i>Quản lý thời gian</div>
+            <div class="skill-item"><i class="fas fa-users"></i>Làm việc nhóm</div>
+            <div class="skill-item"><i class="fas fa-robot"></i>Sử dụng AI</div>
+        </div>
+    </div>
+    <h3 class="category">Công cụ</h3>
+<div class="skills-slider-viewport">
+    <div class="skills-track-reverse">
+        <div class="skill-item"><img src="image_2.png" alt="Word">Word</div>
+        <div class="skill-item"><img src="image_3.png" alt="Excel">Excel</div>
+        <div class="skill-item"><img src="image_4.png" alt="Power Point">Power Point</div>
+        <div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg" alt="PS">Photoshop</div>
+        <div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg" alt="AI">Illustrator</div>
+        <div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg" alt="PR">Premiere Pro</div>
+        <div class="skill-item"><img src="image_8.png" alt="Canva">Canva</div>
+        <div class="skill-item"><img src="image_9.png" alt="CapCut">CapCut</div>
+
+        <div class="skill-item"><img src="image_2.png" alt="Word">Word</div>
+        <div class="skill-item"><img src="image_3.png" alt="Excel">Excel</div>
+        <div class="skill-item"><img src="image_4.png" alt="Power Point">Power Point</div>
+        <div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg" alt="PS">Photoshop</div>
+        <div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg" alt="AI">Illustrator</div>
+        <div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg" alt="PR">Premiere Pro</div>
+        <div class="skill-item"><img src="image_8.png" alt="Canva">Canva</div>
+        <div class="skill-item"><img src="image_9.png" alt="CapCut">CapCut</div>
+    </div>
+</div>
+</section>
+<style>
+    /* Timeline Container tối ưu cho nền sáng */
+    .ryan-timeline-new {
+        position: relative;
+        padding-left: 40px;
+        margin-top: 3rem;
+    }
+
+    /* Trục dọc với gradient trẻ trung */
+    .ryan-timeline-new::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 3px;
+        background: linear-gradient(to bottom, var(--accent-color), var(--secondary-accent), #e2e8f0);
+        border-radius: 10px;
+    }
+
+    .timeline-block {
+        position: relative;
+        margin-bottom: 50px;
+    }
+
+    /* Chấm tròn hiệu ứng tỏa sáng (Glow) */
+    .timeline-dot-new {
+        position: absolute;
+        left: -46px;
+        top: 5px;
+        width: 15px;
+        height: 15px;
+        background: #fff;
+        border: 3px solid var(--accent-color);
+        border-radius: 50%;
+        z-index: 2;
+        box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
+    }
+
+    /* Card kinh nghiệm - Hiện đại và Sạch sẽ */
+    .timeline-card-new {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        border-radius: 20px;
+        padding: 30px;
+        transition: all 0.4s ease;
+        text-align: left;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Hiệu ứng dải màu nhỏ ở đầu card khi hover */
+    .timeline-card-new::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+        background: var(--accent-color);
+        opacity: 0;
+        transition: 0.3s;
+    }
+
+    .timeline-card-new:hover {
+        transform: translateX(10px);
+        border-color: transparent;
+        box-shadow: 0 20px 40px rgba(79, 70, 229, 0.08);
+    }
+
+    .timeline-card-new:hover::before {
+        opacity: 1;
+    }
+
+    .card-header-new {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .job-title {
+        font-size: 1.3rem;
+        font-weight: 800;
+        color: var(--text-color);
+        margin: 0;
+        letter-spacing: -0.5px;
+    }
+
+    .company-name {
+        font-size: 1rem;
+        color: var(--accent-color);
+        margin: 5px 0 0;
+        font-weight: 700;
+        display: inline-block;
+        padding-bottom: 2px;
+        border-bottom: 1px dashed var(--accent-color);
+    }
+
+    .job-date {
+        font-size: 0.85rem;
+        color: var(--slate-400);
+        font-family: monospace;
+        font-weight: 600;
+        background: #f1f5f9;
+        padding: 4px 12px;
+        border-radius: 20px;
+    }
+
+    .job-desc-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .job-desc-list li {
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 12px;
+        color: var(--slate-400);
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .job-desc-list li::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        color: var(--secondary-accent);
+        font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+        .card-header-new { flex-direction: column; gap: 10px; }
+        .timeline-card-new:hover { transform: translateY(-5px); }
+        .ryan-timeline-new { padding-left: 30px; }
+        .timeline-dot-new { left: -36px; }
+    }
+</style>
+
+<section id="experience" class="custom-container">
+    <h2 class="section-title">Kinh nghiệm chuyên môn</h2>
+    
+    <div class="ryan-timeline-new">
+        <div class="timeline-block">
+            <div class="timeline-dot-new"></div>
+            <div class="timeline-card-new">
+                <div class="card-header-new">
+                    <div class="header-main">
+                        <h3 class="job-title">Project Management Executive</h3>
+                        <h4 class="company-name">MCV Network</h4>
+                    </div>
+                    <span class="job-date">Tháng 9/2024 – Hiện tại</span>
+                </div>
+                <ul class="job-desc-list">
+                    <li>Upload và bảo vệ bản quyền nội dung của đối tác trên Facebook.</li>
+                    <li>Release và hỗ trợ kỹ thuật liên quan đến bản quyền nhạc.</li>
+                    <li>Vận hành các kênh TikTok và Fanpage tin tức âm nhạc, đồng thời lập báo cáo tiến độ dự án.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline-block">
+            <div class="timeline-dot-new"></div>
+            <div class="timeline-card-new">
+                <div class="card-header-new">
+                    <div class="header-main">
+                        <h3 class="job-title">Thực tập sinh Design</h3>
+                        <h4 class="company-name">HUMA AGENCY</h4>
+                    </div>
+                    <span class="job-date">Tháng 6/2024 – Tháng 9/2024</span>
+                </div>
+                <ul class="job-desc-list">
+                    <li>Thiết kế ấn phẩm hình ảnh cho các bài đăng Social Media theo dự án.</li>
+                    <li>Hỗ trợ xây dựng nội dung bài viết và thực hiện hoạt động seeding nhằm tăng nhận diện đến nhóm đối tượng mục tiêu.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline-block" style="margin-bottom: 0;">
+            <div class="timeline-dot-new"></div>
+            <div class="timeline-card-new">
+                <div class="card-header-new">
+                    <div class="header-main">
+                        <h3 class="job-title">Nhân viên Content Marketing (Part-time)</h3>
+                        <h4 class="company-name">Công Ty Cổ Phần Giải Pháp Nền Tảng Số (VDS)</h4>
+                    </div>
+                    <span class="job-date">Tháng 1/2024 – Tháng 6/2024</span>
+                </div>
+                <ul class="job-desc-list">
+                    <li>Lên kế hoạch và vận hành kênh Fanpage và Youtube của thương hiệu.</li>
+                    <li>Xây dựng kịch bản, dựng video và thiết kế poster truyền thông cho các chiến dịch.</li>
+                    <li>Thực hiện hoạt động seeding để tăng độ nhận diện thương hiệu.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    /* 1. KHUNG BAO CHUYÊN ĐỀ MCV NETWORK */
+    .mcv-corporate-wrapper {
+        background: #fcfcfd; /* Nền sáng nhẹ phân biệt mục tiêu điểm */
+        border-radius: 40px;
+        padding: 50px 30px;
+        margin: 4rem 0;
+        border: 2px solid #f1f5f9;
+        position: relative;
+    }
+
+    .mcv-main-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, #4f46e5 0%, #a855f7 100%);
+        color: white;
+        padding: 10px 25px;
+        border-radius: 50px;
+        font-weight: 800;
+        font-size: 0.9rem;
+        margin-bottom: 2.5rem;
+        box-shadow: 0 10px 25px rgba(79, 70, 229, 0.25);
+        letter-spacing: 1px;
+    }
+
+    /* Tối ưu UI cho Hiệu quả công việc (Performance) */
+    .performance-container { margin-top: 3rem; }
+    
+    .company-label {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--slate-400);
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+
+    .perf-card-large { 
+        background: #ffffff; 
+        border: 1px solid rgba(0, 0, 0, 0.05); 
+        border-radius: 24px; 
+        padding: 40px; 
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
+    }
+
+    .card-header-flex { 
+        display: flex; 
+        align-items: center; 
+        margin-bottom: 30px; 
+        gap: 12px;
+    }
+
+    /* HIỆU ỨNG VIỀN SÁNG SIÊU "LỐ" CHO ẢNH ANALYTICS & CONTENT */
+    .glow-card-mcv {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        background: #fff;
+        padding: 5px;
+        transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        z-index: 1;
+    }
+
+    /* Hiệu ứng hào quang màu nóng (Đỏ-Cam-Vàng) cho block cuối */
+    .glow-hot::before, .glow-hot::after {
+        content: '';
+        position: absolute;
+        background: conic-gradient(transparent, #ff0000, #ff8c00, #ffd700, transparent);
+        animation: rotateGlow 3s linear infinite;
+        opacity: 0; transition: 0.3s;
+    }
+
+    /* Hiệu ứng hào quang màu lạnh (Xanh-Tím) cho WeTunes */
+    .glow-cold::before, .glow-cold::after {
+        content: '';
+        position: absolute;
+        background: conic-gradient(transparent, #00f2ff, #4f46e5, #a855f7, transparent);
+        animation: rotateGlow 3s linear infinite;
+        opacity: 0; transition: 0.3s;
+    }
+
+    .glow-card-mcv::before { width: 200%; height: 200%; top: -50%; left: -50%; z-index: -2; }
+    .glow-card-mcv::after { inset: -15px; filter: blur(20px); z-index: -1; }
+
+    .glow-card-mcv:hover::before, .glow-card-mcv:hover::after {
+        opacity: 1;
+        animation: rotateGlow 2s linear infinite, pulseGlow 1.2s ease-in-out infinite alternate;
+    }
+
+    .glow-card-mcv .img-box {
+        position: relative; background: white; border-radius: 11px; z-index: 0;
+        overflow: hidden; width: 100%; height: 100%;
+    }
+
+    .glow-card-mcv img { display: block; width: 100%; height: 100%; transition: 0.6s ease; }
+    .glow-card-mcv:hover { transform: translateY(-12px) scale(1.02); }
+
+    @keyframes rotateGlow { 100% { transform: rotate(360deg); } }
+    @keyframes pulseGlow { 0% { filter: blur(20px) brightness(1); } 100% { filter: blur(30px) brightness(1.5); } }
+
+    /* Giữ nguyên các Style khác từ code gốc của Vy */
+    .img-wrapper { position: relative; overflow: hidden; border-radius: 16px; cursor: zoom-in; background: #f1f5f9; border: 1px solid rgba(0,0,0,0.05); aspect-ratio: 16/9; }
+    .img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); }
+    .img-wrapper:hover img { transform: scale(1.08); }
+    .img-hint { position: absolute; bottom: 12px; right: 12px; background: rgba(255, 255, 255, 0.9); color: var(--text-color); font-size: 0.7rem; font-weight: 700; padding: 6px 12px; border-radius: 50px; pointer-events: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; background: var(--secondary-bg); padding: 30px; border-radius: 20px; }
+    .stat-label { display: block; color: var(--slate-400); font-size: 0.9rem; margin-bottom: 8px; font-weight: 600; }
+    .stat-value { display: block; color: var(--accent-color); font-size: 2rem; font-weight: 800; letter-spacing: -1px; }
+    .stat-time { color: var(--slate-400); font-size: 0.75rem; font-style: italic; }
+    
+    @media (max-width: 768px) { .mcv-section-wrapper { padding: 30px 15px; } .stats-grid { grid-template-columns: 1fr; } }
+</style>
+
 <style>
     /* 1. THIẾT LẬP KHUNG TRƯỢT NGANG TỔNG THỂ */
     .mcv-horizontal-rail {
@@ -137,3 +1272,150 @@
 
         </div> </div>
 </section>
+<style>
+    /* CSS hiệu ứng Reveal */
+    .reveal-card:hover img { transform: scale(1.1); }
+    .reveal-card:hover .reveal-overlay { opacity: 1 !important; transform: translateY(0) !important; }
+    
+    /* Đảm bảo lightbox hiển thị ảnh không bị méo */
+    .lightbox img {
+        max-width: 90%;
+        max-height: 90vh;
+        object-fit: contain;
+    }
+</style>
+<style>
+    /* Khung liên hệ màu xanh tím trong suốt */
+    .huma-footer-box {
+        background: linear-gradient(135deg, rgba(88, 80, 236, 0.1), rgba(139, 92, 246, 0.15)); /* Màu xanh tím trong suốt */
+        backdrop-filter: blur(10px); /* Hiệu ứng mờ nền */
+        border: 1px solid rgba(139, 92, 246, 0.3); /* Viền tím nhẹ */
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        margin: 50px 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .huma-footer-box h2 {
+        color: #8b5cf6; /* Màu tím điểm nhấn */
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .huma-contact-info p {
+        font-weight: 600;
+        color: var(--text-color);
+        font-size: 1.1rem;
+        margin: 10px 0;
+    }
+
+    .huma-contact-info a {
+        color: #6366f1; /* Màu xanh tím cho link */
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .huma-contact-info a:hover {
+        color: #8b5cf6;
+        text-decoration: underline;
+    }
+
+    .huma-copyright {
+        font-size: 0.8rem;
+        color: #94a3b8;
+        letter-spacing: 2px;
+        margin-top: 30px;
+        text-transform: uppercase;
+    }
+</style>
+
+<footer id="contact">
+    <div class="huma-footer-box">
+        <h2 style="text-align: center; width: 100%; border: none; margin-bottom: 30px; font-weight: 800; font-size: 2.2rem; color: var(--text-color); display: block;">
+            Liên hệ
+        </h2>
+        
+        <div class="huma-contact-info" style="text-align: center;">
+            <p style="font-weight: 700; color: var(--text-color); font-size: 1.1rem; margin-bottom: 15px;">
+                SĐT: 0986952436 | Email: nmhv29@gmail.com
+            </p>
+            <p>
+                Facebook: <a href="https://www.facebook.com/concuatrenbo" target="_blank" style="color: #6366f1; text-decoration: none; font-weight: 600;">Nguyễn Mai Hạnh Vy</a>
+            </p>
+        </div>
+
+        <p style="text-align: center; font-size: 0.8rem; color: #94a3b8; letter-spacing: 1px; margin-top: 40px;">
+            © 2026 NGUYỄN MAI HẠNH VY. ALL RIGHTS RESERVED.
+        </p>
+    </div>
+</footer>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:1000; justify-content:center; align-items:center;">
+    <span class="close-btn" style="position:absolute; top:20px; right:30px; color:white; font-size:40px; cursor:pointer;">&times;</span>
+    <img id="lightbox-img" src="" alt="Enlarged Image" style="max-width:90%; max-height:90%; border-radius:5px;">
+</div>
+
+<script>
+    function showTab(type) {
+        const eduTab = document.getElementById('tab-edu');
+        const certTab = document.getElementById('tab-cert');
+        const eduContent = document.getElementById('edu-content');
+        const certContent = document.getElementById('cert-content');
+        if (type === 'edu') {
+            if(eduTab) eduTab.classList.add('active'); 
+            if(certTab) certTab.classList.remove('active');
+            if(eduContent) eduContent.style.display = 'block'; 
+            if(certContent) certContent.style.display = 'none';
+        } else {
+            if(certTab) certTab.classList.add('active'); 
+            if(eduTab) eduTab.classList.remove('active');
+            if(eduContent) eduContent.style.display = 'none'; 
+            if(certContent) certContent.style.display = 'block';
+        }
+    }
+
+    function openLightbox(src) { 
+        document.getElementById('lightbox-img').src = src; 
+        document.getElementById('lightbox').style.display = 'flex'; 
+        document.body.style.overflow = 'hidden'; 
+    }
+
+    function closeLightbox() { 
+        document.getElementById('lightbox').style.display = 'none'; 
+        document.body.style.overflow = 'auto'; 
+    }
+</script>
+<script>
+    const words = ["con người", "thương hiệu"];
+    let currentIndex = 0;
+    const textElement = document.getElementById("flip-text");
+
+    function flipText() {
+        if(!textElement) return;
+        
+        // 1. Hiệu ứng biến mất
+        textElement.classList.add("fade-out");
+
+        setTimeout(() => {
+            // 2. Đổi nội dung chữ
+            currentIndex = (currentIndex + 1) % words.length;
+            textElement.innerText = words[currentIndex];
+
+            // 3. Chuẩn bị vị trí cho chữ mới
+            textElement.classList.remove("fade-out");
+            textElement.classList.add("fade-in");
+
+            // 4. Hiệu ứng xuất hiện
+            setTimeout(() => {
+                textElement.classList.remove("fade-in");
+            }, 50);
+        }, 500); // 500ms là thời gian khớp với transition trong CSS
+    }
+
+    // Chạy hiệu ứng lặp lại mỗi 3 giây
+    setInterval(flipText, 3000);
+</script>
