@@ -165,6 +165,85 @@ html {
 
 .fade-out { opacity: 0; transform: translateY(-10px); }
 .fade-in { opacity: 0; transform: translateY(10px); }
+/* TỐI ƯU UX/UI MOBILE BY GEMINI */
+
+@media (max-width: 768px) {
+    /* 1. Thanh điều hướng dạng cuộn ngang (Scrollable Nav) 
+       Giúp người dùng vẫn truy cập được mọi mục mà không làm rối UI */
+    .nav-container {
+        padding: 0.8rem 1rem;
+    }
+    
+    nav ul {
+        gap: 1.5rem;
+        overflow-x: auto;
+        padding: 10px 0;
+        width: 100%;
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Ẩn scrollbar để đẹp hơn */
+    }
+    
+    nav ul::-webkit-scrollbar { display: none; }
+
+    nav a {
+        white-space: nowrap; /* Không cho chữ nhảy xuống dòng */
+        font-size: 0.85rem;
+        background: rgba(79, 70, 229, 0.05); /* Tạo khối nhẹ để dễ chạm */
+        padding: 6px 12px;
+        border-radius: 20px;
+    }
+
+    /* 2. Hero Section - Ưu tiên nội dung */
+    .hero {
+        padding-top: 80px;
+        gap: 1.5rem;
+        min-height: auto; /* Không ép 100vh trên mobile để tránh lỗi trình duyệt */
+    }
+
+    .hero-image {
+        width: 220px; /* Thu nhỏ ảnh để nhường chỗ cho text */
+        height: 220px;
+        margin-top: 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+        letter-spacing: -1px;
+    }
+
+    /* 3. Stats - Chuyển thành Grid 2 cột hoặc hàng ngang cuộn */
+    .stats-badge-container {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        padding: 15px;
+        gap: 10px;
+    }
+    
+    .stat-number { font-size: 1.8rem; }
+
+    /* 4. Thanks Section - Tránh tràn màn hình */
+    .thanks-script {
+        font-size: 5rem; /* Giảm size để không bị bể layout */
+    }
+    
+    .thanks-modern {
+        font-size: 0.8rem;
+        letter-spacing: 5px;
+    }
+
+    /* 5. Tăng diện tích chạm cho Button */
+    .btn {
+        padding: 1.2rem; /* Nút to hơn một chút để dễ bấm bằng ngón cái */
+        font-size: 1rem;
+    }
+}
+
+/* Hiệu ứng mượt mà khi cuộn cho Mobile */
+* {
+    -webkit-tap-highlight-color: transparent; /* Xóa khung xanh khi chạm trên iOS/Android */
+}
     </style>
 </head>
 <body>
