@@ -1749,6 +1749,25 @@ nav {
     <i class="fas fa-envelope"></i> 
     <span>Liên hệ</span>
 </a>
+<script>
+    let lastScrollTop = 0;
+    const navbar = document.querySelector('nav');
+
+    window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Nếu cuộn xuống quá 50px
+        if (scrollTop > lastScrollTop && scrollTop > 50) {
+            // Cuộn xuống -> Ẩn menu
+            navbar.classList.add('nav-hidden');
+        } else {
+            // Cuộn lên -> Hiện menu
+            navbar.classList.remove('nav-hidden');
+        }
+        
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Đảm bảo không bị số âm
+    }, false);
+</script>
 </section>
 <footer id="contact">
     <div class="huma-footer-box">
@@ -1843,23 +1862,4 @@ nav {
 
     // Chạy hiệu ứng lặp lại mỗi 3 giây
     setInterval(flipText, 3000);
-<script>
-    let lastScrollTop = 0;
-    const navbar = document.querySelector('nav');
-
-    window.addEventListener('scroll', function() {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        // Nếu cuộn xuống quá 50px
-        if (scrollTop > lastScrollTop && scrollTop > 50) {
-            // Cuộn xuống -> Ẩn menu
-            navbar.classList.add('nav-hidden');
-        } else {
-            // Cuộn lên -> Hiện menu
-            navbar.classList.remove('nav-hidden');
-        }
-        
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Đảm bảo không bị số âm
-    }, false);
-</script>
 </script>
